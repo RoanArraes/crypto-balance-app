@@ -7,7 +7,7 @@ function App() {
     <Theme>
       <div className="App">
         <header className="App-header">
-
+          TESTE
         </header>
       </div>
     </Theme>
