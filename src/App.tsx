@@ -1,13 +1,16 @@
 import React from 'react';
 import './App.css';
+import Theme from './utils/Theme';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <Theme>
+      <div className="App">
+        <header className="App-header">
 
-      </header>
-    </div>
+        </header>
+      </div>
+    </Theme>
   );
 }
 
