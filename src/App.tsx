@@ -20,9 +20,9 @@ function App() {
       <div className="App">
         <BrowserRouter>
           <Routes>
-            <Route path={ROUTES.HOME} element={<WalletHoldings />} />
-            <Route path={ROUTES.LOGIN} element={<Login />} />
-            <Route path={ROUTES.BALANCE} element={<WalletBalance />} />
+            <Route path={ROUTES.HOME.url} element={<WalletHoldings />} />
+            <Route path={ROUTES.LOGIN.url} element={<Login />} />
+            <Route path={ROUTES.BALANCE.url} element={<WalletBalance />} />
           </Routes>
         </BrowserRouter>
       </div>
