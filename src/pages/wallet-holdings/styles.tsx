@@ -73,6 +73,36 @@ export const FooterArea = styled.div`
   width: 100%;
 `;
 
-export const Label = styled.div`
-  
-`;
+export const GroupBoxArea = {
+  Left: styled.div`
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    label:nth-child(1) {
+      margin: 15px 0px 5px 0px ;
+    }
+
+    label:nth-child(2) {
+      margin-left: 10px;
+    }
+  `,
+  Right: styled.div`
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+
+    label:nth-child(1) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 15px;
+    }
+
+  `,
+}

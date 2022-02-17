@@ -3,16 +3,18 @@ import {
   HeaderArea,
   BodyArea,
   FooterArea,
-  Label
+  GroupBoxArea
 } from './styles';
 
 import { 
   Header,
   Footer,
-  NavBar
+  NavBar,
+  BoxArea,
+  Label
  } from '../../components';
 
- import { LinksNavBarInterface } from '../../utils/interfaces';
+import { LinksNavBarInterface } from '../../utils/interfaces';
 import { ROUTES } from '../../utils/constants/routes';
 import { LABELS } from '../../utils/constants/labels';
 
@@ -25,6 +27,23 @@ const links: LinksNavBarInterface[] = [
   {...ROUTES.BALANCE},
 ];
 
+const AreaLeft = () => {
+  return(
+    <GroupBoxArea.Left>
+      <Label label='Your Holdings' />
+      <Label label='$' />
+    </GroupBoxArea.Left>
+  )
+};
+
+const AreaRight = () => {
+  return(
+    <GroupBoxArea.Right>
+      <Label label='Holdings' />
+    </GroupBoxArea.Right>
+  )
+}
+
 export default function WalletHoldings(props: Props) {
   return(
     <Container>
@@ -33,7 +52,10 @@ export default function WalletHoldings(props: Props) {
         <NavBar links={links} />
       </HeaderArea>
       <BodyArea>
-        <Label>Creating Wallet holdings!</Label>
+        <BoxArea 
+          childrenLeft={AreaLeft()}
+          childrenRight={AreaRight()}
+        />
       </BodyArea>
       <FooterArea>
         <Footer label={LABELS.POWERED_BY} />
