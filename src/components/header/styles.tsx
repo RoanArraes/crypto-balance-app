@@ -1,13 +1,50 @@
 import styled from "styled-components";
 
 export const HeaderArea = styled.div`
-  text-align: center;
-  margin: 40px 0px 0px 0px;
+  height: 50px;
+  display: flex;
+  padding-left: 20px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  background-color: ${props => props.theme.colors.header.lightBlack};
+  box-shadow: ${props => props.theme.shadows.lightBlack};
+
+  ul {
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    list-style-type: none;
+    padding-left: 20px;
+
+    li {
+      padding: 0px 10px;
+      border-right: 1px solid ${props => props.theme.colors.black};
+
+      &:last-child {
+        border: none;
+      }
+
+      a {
+        color: ${props => props.theme.colors.white};
+        font-family: ${props => props.theme.fonts[1]};
+        font-size: ${props => props.theme.fontSizes.small};
+        text-transform: uppercase;
+        text-decoration: none;
+        text-shadow: ${props => props.theme.shadows.lightBlack0};
+
+        &:hover {
+          color: ${props => props.theme.colors.buttonHighligth};
+        }
+      } 
+    }
+  }
 `;
 
 export const LabelHeader = styled.label`
   font-family: ${props => props.theme.fonts[1]};
-  font-size: ${props => props.theme.fontSizes.extreme};
+  font-size: ${props => props.theme.fontSizes.medium2};
   text-transform: uppercase;
   text-shadow: ${props => props.theme.shadows.lightBlack0};
   color: ${props => props.theme.colors.black};
