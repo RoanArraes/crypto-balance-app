@@ -14,7 +14,13 @@ const theme = {
     redButtonDelete: "#FF0000",
     rgba: {
       whiteTransparency: "rgba(255,255,255,0.5)"
-    }
+    },
+    header: {
+      lightBlack: "rgba(0,0,0,0.5)",
+      lightBlack2: "rgba(0,0,0,0.7)",
+      black: "#000000",
+      white:"#FFFFFF"
+    },
   },
   fonts: ["sans-serif", "RussoOneRegular"],
   fontSizes: {
@@ -25,7 +31,9 @@ const theme = {
     extreme: "4em"
   },
   shadows: {
-    lightBlack: "2px 2px 3px rgb(0,0,0,0.1)"
+    lightBlack0: "2px 2px 3px rgba(0,0,0,0.2)",
+    lightBlack: "2px 2px 3px rgba(0,0,0,0.3)",
+    lightWhite0: "2px 2px 3px rgba(255,255,255,0.3)" 
   }
 }
 

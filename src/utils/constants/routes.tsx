@@ -1,7 +1,7 @@
 /* Routes Constants */
 
 export const ROUTES = {
-  LOGIN: "/login",
-  HOME:"/",
-  BALANCE: "/wallet-balance"
+  LOGIN: { name:"", url: "/login" },
+  HOME: { name: "holdings", url: "/" },
+  BALANCE: { name: "balance", url:"/wallet-balance"}
 }
