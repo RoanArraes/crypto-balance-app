@@ -1,13 +1,17 @@
 import {
-  Text
+  Text,
+  TeaxtArea
 } from './styles'
 
 type Props = {
-  label: string
+  label?: string
 }
 
 export default function Label({label}: Props) {
   return(
-    <Text>{label}</Text>
+    <TeaxtArea>
+      <Text>{label}</Text>
+    </TeaxtArea>
+
   )
 }

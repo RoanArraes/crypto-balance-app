@@ -1,6 +1,6 @@
 import {
   HeaderArea,
-  Label
+  LabelHeader
 } from './styles';
 
 type Props = {
@@ -10,9 +10,9 @@ type Props = {
 export function Header({label}: Props) {
   return(
     <HeaderArea>
-      <Label>
+      <LabelHeader>
         {label}
-      </Label>
+      </LabelHeader>
     </HeaderArea>
   )
 }

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import ImgAlien from '../../utils/assets/images/svg/alien-head.svg';
+import ImgAlienWhite from '../../utils/assets/images/svg/alien-head-white.svg';
 
 export const Container = styled.div`
   width: 100%;
@@ -12,7 +13,8 @@ export const Container = styled.div`
   background-image: url(${ImgAlien});
   background-repeat: repeat;
   background-position: center;
-  background-size: 80px;
+  background-size: 70px;
+  overflow: auto;
 `;
 
 export const HeaderArea = styled.div`
@@ -21,20 +23,19 @@ export const HeaderArea = styled.div`
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-
-  div:nth-child(1) {
-    margin: 20px 40px 20px 40px;
-  };
+  background-color: ${props => props.theme.colors.header.lightBlack};
+  background-image: url(${ImgAlienWhite});
+  background-repeat: repeat;
+  background-position: right;
+  background-size: 135px;
+  box-shadow: ${props => props.theme.shadows.lightBlack};
 
   div:nth-child(2) {
     width: 100%;
-    height: 50px;
-    background-color: ${props => props.theme.colors.black};
-    display: flex;
+    height: 40px;
     align-items: center;
 
     ul {
-      width: 100%;
       display: flex;
       justify-content: flex-start;
       align-items: center;
@@ -42,13 +43,14 @@ export const HeaderArea = styled.div`
       padding-left: 20px;
 
       li {
-        padding-right: 20px;
+        padding-right: 40px;
 
         a {
           color: ${props => props.theme.colors.white};
           font-family: ${props => props.theme.fonts[1]};
           text-transform: uppercase;
           text-decoration: none;
+          text-shadow: ${props => props.theme.shadows.lightBlack0};
 
           :hover {
             color: ${props => props.theme.colors.buttonHighligth}
@@ -62,36 +64,31 @@ export const HeaderArea = styled.div`
 
 export const BodyArea = styled.div`
   width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  display: block;
+  margin-top: auto;
 `;
 
 export const FooterArea = styled.div`
   width: 100%;
+  margin-top: auto;
+  background-color: ${props => props.theme.colors.header.lightBlack};
 `;
 
 export const GroupBoxArea = {
-  Left: styled.div`
+  Container: styled.div`
     width: 100%;
-    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  `,
+  Left: styled.div`
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-
-    label:nth-child(1) {
-      margin: 15px 0px 5px 0px ;
-    }
-
-    label:nth-child(2) {
-      margin-left: 10px;
-    }
+    flex-wrap: nowrap;
+    align-items: center;
+    min-width: 200px;
   `,
   Right: styled.div`
-    width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -101,8 +98,53 @@ export const GroupBoxArea = {
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-top: 15px;
+      text-shadow: ${props => props.theme.shadows.lightBlack0};
+    }
+  `,
+  GroupButtonInfoHolding: styled.div`
+    margin: 20px 0px 20px 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 500px;
+
+    button {
+      width: 150px;
+;
+      label {
+        font-size: ${props => props.theme.fontSizes.medium};
+      }
+    }
+  `,
+  GroupLabels: styled.div`
+    div:nth-child(1) {
+      text-align: center;
+      label {
+        margin: 15px 0px 5px 0px;
+        font-size: ${props => props.theme.fontSizes.medium};
+        text-shadow: ${props => props.theme.shadows.lightBlack0};
+      }
     }
 
+   div:nth-child(2) {
+      text-align: center;
+      label {
+        font-size: ${props => props.theme.fontSizes.medium};
+        text-shadow: ${props => props.theme.shadows.lightBlack0};
+      }
+    }
+  `,
+  GroupButtonAdd: styled.div`
+
+  `,
+  GroupTableHoldings: styled.div`
+    width: calc(100% - 20px);
+    border: 1px solid black;
+    border-radius: 10px;
+    height: 640px;
+    overflow: auto;
+    
+    table {
+      width: 100%;
+    }
   `,
 }

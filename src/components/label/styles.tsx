@@ -5,3 +5,7 @@ export const Text = styled.label`
   font-family: ${props => props.theme.fonts[1]};
   text-transform: uppercase;
 `;
+
+export const TeaxtArea = styled.div`
+  width: 100%;
+`

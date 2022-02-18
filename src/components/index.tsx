@@ -5,6 +5,8 @@ import ButtonRounded from "./button-rounded/ButtonRounded";
 import NavBar from "./navbar/NavBar";
 import BoxArea from "./box-area/BoxArea";
 import Label from "./label/Label";
+import ButtonRoundedInfo from "./button-rounded-info/ButtonRoundedInfo";
+import TableHoldings from "./table-holdings/TableHoldings";
 
 export {
   InputRounded,
@@ -13,5 +15,7 @@ export {
   Footer,
   NavBar,
   BoxArea,
-  Label
+  Label,
+  ButtonRoundedInfo,
+  TableHoldings
 };
