@@ -19,47 +19,6 @@ export const Container = styled.div`
 
 export const HeaderArea = styled.div`
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  background-color: ${props => props.theme.colors.header.lightBlack};
-  background-image: url(${ImgAlienWhite});
-  background-repeat: repeat;
-  background-position: right;
-  background-size: 135px;
-  box-shadow: ${props => props.theme.shadows.lightBlack};
-
-  div:nth-child(2) {
-    width: 100%;
-    height: 40px;
-    align-items: center;
-
-    ul {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      list-style-type: none;
-      padding-left: 20px;
-
-      li {
-        padding-right: 40px;
-
-        a {
-          color: ${props => props.theme.colors.white};
-          font-family: ${props => props.theme.fonts[1]};
-          text-transform: uppercase;
-          text-decoration: none;
-          text-shadow: ${props => props.theme.shadows.lightBlack0};
-
-          :hover {
-            color: ${props => props.theme.colors.buttonHighligth}
-          }
-        } 
-
-      }
-    }
-  }
 `;
 
 export const BodyArea = styled.div`
@@ -105,6 +64,8 @@ export const GroupBoxArea = {
     margin: 20px 0px 20px 0;
     overflow-x: hidden;
     overflow-y: auto;
+    border: 1px solid transparent;
+    border-radius: 10px;
     height: 500px;
 
     button {

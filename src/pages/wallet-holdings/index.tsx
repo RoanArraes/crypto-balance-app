@@ -9,7 +9,6 @@ import {
 import { 
   Header,
   Footer,
-  NavBar,
   BoxArea,
   Label,
   ButtonRounded,
@@ -21,6 +20,10 @@ import {
   LinksNavBarInterface,
   HoldingInfoInterface
 } from '../../utils/interfaces';
+
+import {
+  MockWalletHoldings
+} from '../../utils/mocks';
 
 import { ROUTES } from '../../utils/constants/routes';
 import { LABELS } from '../../utils/constants/labels';
@@ -34,144 +37,7 @@ const links: LinksNavBarInterface[] = [
   {...ROUTES.BALANCE},
 ];
 
-const holdings: HoldingInfoInterface[] = [
-  {
-    name: 'binance',
-    totalHolding: 150.00,
-    profit24hrs: 0.00,
-    loss24hrs: 100.00,
-    idealHold: 100.00,
-    action: 'Rebalance'
-  },
-  {
-    name: 'gateio',
-    totalHolding: 150.00,
-    profit24hrs: 0.00,
-    loss24hrs: 100.00,
-    idealHold: 100.00,
-    action: 'Rebalance'
-  },
-  {
-    name: 'hotbit',
-    totalHolding: 150.00,
-    profit24hrs: 0.00,
-    loss24hrs: 100.00,
-    idealHold: 100.00,
-    action: 'Rebalance'
-  },
-  {
-    name: 'hxwz',
-    totalHolding: 150.00,
-    profit24hrs: 0.00,
-    loss24hrs: 100.00,
-    idealHold: 100.00,
-    action: 'Rebalance'
-  },
-  {
-    name: 'hxwz23',
-    totalHolding: 150.00,
-    profit24hrs: 0.00,
-    loss24hrs: 100.00,
-    idealHold: 100.00,
-    action: 'Rebalance'
-  },
-  {
-    name: 'hxwz23aaaaaaaaa5325325321aaaaaaaaaaaaaaaaaaaaaa',
-    totalHolding: 150000000000.00,
-    profit24hrs: 100000000000.0000000,
-    loss24hrs: 1000000.00,
-    idealHold: 100000000000000.00,
-    action: 'Rebalance'
-  },
-  {
-    name: 'hxwz23aaaaaaaaaa32352aaaaaaaaaaaaaaaaaaaaa',
-    totalHolding: 150000000000.00,
-    profit24hrs: 100000000000.0000000,
-    loss24hrs: 1000000.00,
-    idealHold: 100000000000000.00,
-    action: 'Rebalance'
-  },
-  {
-    name: 'hxwz23aaaaaaaaaa35532532aaaaaaaaaaaaaaaaaaaaa',
-    totalHolding: 150000000000.00,
-    profit24hrs: 100000000000.0000000,
-    loss24hrs: 1000000.00,
-    idealHold: 100000000000000.00,
-    action: 'Rebalance'
-  },
-  {
-    name: 'hxwz23aaaaaaa532532aaaaaaaaaaaaaaaaaaaaaaaa',
-    totalHolding: 150000000000.00,
-    profit24hrs: 100000000000.0000000,
-    loss24hrs: 1000000.00,
-    idealHold: 100000000000000.00,
-    action: 'Rebalance'
-  },
-  {
-    name: 'hxwz23aaaaaaaa43432aaaaaaaaaaaaaaaaaaaaaaa',
-    totalHolding: 150000000000.00,
-    profit24hrs: 100000000000.0000000,
-    loss24hrs: 1000000.00,
-    idealHold: 100000000000000.00,
-    action: 'Rebalance'
-  },
-  {
-    name: 'hxwz23aaaaaaaaaa9786786aaaaaaaaaaaaaaaaaaaaa',
-    totalHolding: 150000000000.00,
-    profit24hrs: 100000000000.0000000,
-    loss24hrs: 1000000.00,
-    idealHold: 100000000000000.00,
-    action: 'Rebalance'
-  },
-  {
-    name: 'hxwz23aaaaaaaaaa000aaaaaaaaaaaaaaaaaaaaa',
-    totalHolding: 150000000000.00,
-    profit24hrs: 100000000000.0000000,
-    loss24hrs: 1000000.00,
-    idealHold: 100000000000000.00,
-    action: 'Rebalance'
-  },
-  {
-    name: 'hxwz23aaaaaaaaaaa7998aaaaaaaaaaaaaaaaaaaa',
-    totalHolding: 150000000000.00,
-    profit24hrs: 100000000000.0000000,
-    loss24hrs: 1000000.00,
-    idealHold: 100000000000000.00,
-    action: 'Rebalance'
-  },
-  {
-    name: 'hxwz23aaaaaaaaaa8676aaaaaaaaaaaaaaaaaaaaa',
-    totalHolding: 150000000000.00,
-    profit24hrs: 100000000000.0000000,
-    loss24hrs: 1000000.00,
-    idealHold: 100000000000000.00,
-    action: 'Rebalance'
-  },
-  {
-    name: 'hxwz23aaaaaa5465aaaaaaaaaaaaaaaaaaaaaaaaa',
-    totalHolding: 150000000000.00,
-    profit24hrs: 100000000000.0000000,
-    loss24hrs: 1000000.00,
-    idealHold: 100000000000000.00,
-    action: 'Rebalance'
-  },
-  {
-    name: 'hxwz23aaaaaaa44aaaaaaaaaaaaaaaaaaaaaaaa',
-    totalHolding: 150000000000.00,
-    profit24hrs: 100000000000.0000000,
-    loss24hrs: 1000000.00,
-    idealHold: 100000000000000.00,
-    action: 'Rebalance'
-  },
-  {
-    name: 'hxwz23aaaaaaaaaaaaa213aaaaaaaaaaaaaaaaaa',
-    totalHolding: 150000000000.00,
-    profit24hrs: 100000000000.0000000,
-    loss24hrs: 1000000.00,
-    idealHold: 100000000000000.00,
-    action: 'Rebalance'
-  }
-];
+const holdings = MockWalletHoldings;
 
 const renderButtonHolding = (holdings: HoldingInfoInterface[]) => {
   if(!holdings || !holdings.length) {
@@ -218,8 +84,10 @@ export default function WalletHoldings(props: Props) {
   return(
     <Container>
       <HeaderArea>
-        <Header label={LABELS.TITLE_PROJECT} />
-        <NavBar links={links} />
+        <Header
+          label={LABELS.TITLE_PROJECT}
+          links={links} 
+        />
       </HeaderArea>
       <BodyArea>
         <GroupBoxArea.Container>
