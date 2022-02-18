@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 import { LinksNavBarInterface } from '../../utils/interfaces';
 
 type Props = {
-  links: LinksNavBarInterface[]
+  links?: LinksNavBarInterface[]
 };
 
-function renderLinks(links: LinksNavBarInterface[]) {
+function renderLinks(links?: LinksNavBarInterface[]) {
   if(links && links.length >= 0) {
     return(
     <ul>
@@ -25,8 +25,8 @@ function renderLinks(links: LinksNavBarInterface[]) {
 
 export default function NavBar({links}: Props) {
    return (
-     <div>
+     <>
        {renderLinks(links)}
-    </div>
+    </>
   );
 };
