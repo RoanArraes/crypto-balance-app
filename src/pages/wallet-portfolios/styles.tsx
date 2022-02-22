@@ -18,7 +18,6 @@ export const HeaderArea = styled.div`
 export const BodyArea = styled.div`
   width: 100%;
   display: block;
-  margin-top: auto;
 `;
 
 export const FooterArea = styled.div`
@@ -91,6 +90,9 @@ export const GroupBoxArea = {
   GroupTableHoldings: styled.div`
     width: calc(100% - 20px);
     margin-top: 20px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    overflow: hidden;
     
     table {
       width: 100%;

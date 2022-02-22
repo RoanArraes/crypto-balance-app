@@ -1,4 +1,5 @@
 export interface HoldingInfoInterface {
+  id: string,
   name: string,
   totalHolding: number,
   profit24hrs: number,

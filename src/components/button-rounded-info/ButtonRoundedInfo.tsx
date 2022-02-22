@@ -7,13 +7,15 @@ import {
 import { CapitalizeFirstLetter } from '../../utils/functions';
 
 type Props = {
-  label: string
+  id: string,
+  label: string,
+  onClick(event: React.MouseEvent<HTMLButtonElement>): void;
 }
 
-export default function ButtonRoundedInfo({label}: Props) {
+export default function ButtonRoundedInfo({id, label, onClick}: Props) {
   return(
     <ButtonArea>
-      <Button>
+      <Button id={id} onClick={onClick}>
           <Label>{CapitalizeFirstLetter(label)}</Label>
         </Button>
     </ButtonArea>
