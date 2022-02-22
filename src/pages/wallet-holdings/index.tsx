@@ -73,6 +73,9 @@ const AreaLeft = () => {
 const AreaRight = () => {
   return(
     <GroupBoxArea.Right>
+      <GroupBoxArea.GroupLabels>
+        <Label label='Holdings' />
+      </GroupBoxArea.GroupLabels>
       <GroupBoxArea.GroupTableHoldings>
         <TableHoldings holdings={holdings}/>
       </GroupBoxArea.GroupTableHoldings>

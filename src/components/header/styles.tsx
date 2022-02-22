@@ -7,7 +7,7 @@ export const HeaderArea = styled.div`
   align-items: center;
   justify-content: flex-start;
   flex-wrap: nowrap;
-  background-color: ${props => props.theme.colors.header.lightBlack};
+  background-color: ${props => props.theme.colors.header.black};
   box-shadow: ${props => props.theme.shadows.lightBlack};
 
   ul {
@@ -20,14 +20,13 @@ export const HeaderArea = styled.div`
 
     li {
       padding: 0px 10px;
-      border-right: 1px solid ${props => props.theme.colors.black};
+      border-right: 1px solid ${props => props.theme.colors.white};
 
       &:last-child {
         border: none;
       }
 
       a {
-        color: ${props => props.theme.colors.white};
         font-family: ${props => props.theme.fonts[1]};
         font-size: ${props => props.theme.fontSizes.small};
         text-transform: uppercase;
@@ -35,7 +34,7 @@ export const HeaderArea = styled.div`
         text-shadow: ${props => props.theme.shadows.lightBlack0};
 
         &:hover {
-          color: ${props => props.theme.colors.buttonHighligth};
+          color: ${props => props.theme.colors.button.buttonHighligth};
         }
       } 
     }
@@ -47,5 +46,5 @@ export const LabelHeader = styled.label`
   font-size: ${props => props.theme.fontSizes.medium2};
   text-transform: uppercase;
   text-shadow: ${props => props.theme.shadows.lightBlack0};
-  color: ${props => props.theme.colors.black};
+  color: ${props => props.theme.colors.white};
 `;

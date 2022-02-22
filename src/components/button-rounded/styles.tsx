@@ -19,7 +19,7 @@ export const Button = styled.button`
   height: 60px;
   border: 1px solid transparent;
   border-radius: 10px;
-  background-color: ${props => props.theme.colors.buttonAdd};
+  background-color: ${props => props.theme.colors.button.buttonAdd};
   box-shadow: ${props => props.theme.shadows.lightBlack};
   cursor: pointer;
 

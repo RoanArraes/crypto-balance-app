@@ -22,7 +22,10 @@ export function Header({label, links}: Props) {
       <LabelHeader>
         {label}
       </LabelHeader>
-      <NavBar links={links} />
+      <NavBar
+        links={links}
+        isNavBarMenu
+      />
     </HeaderArea>
   )
 }

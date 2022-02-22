@@ -1,11 +1,23 @@
-import React from "react";
-import { Link } from "react-router-dom";
-
+import { Link, useLocation } from 'react-router-dom';
 import { LinksNavBarInterface } from '../../utils/interfaces';
+import {
+  ElementList
+} from './styles';
 
 type Props = {
-  links?: LinksNavBarInterface[]
+  links?: LinksNavBarInterface[],
+  isNavBarMenu?: boolean,
 };
+
+function CheckIsLinkPage(url: string): boolean {
+
+  const pathname = useLocation().pathname;
+
+  if (url === pathname) {
+    return true
+  }
+  return false
+}
 
 function renderLinks(links?: LinksNavBarInterface[]) {
   if(links && links.length >= 0) {
@@ -13,9 +25,9 @@ function renderLinks(links?: LinksNavBarInterface[]) {
     <ul>
       {links.map(l => {
         return(
-          <li key={l.name}>
+          <ElementList key={l.name} isLinkPage={(CheckIsLinkPage(l.url))} >
             <Link to={l.url}>{l.name}</Link>
-          </li>
+          </ElementList>
         )
       })}
     </ul>
