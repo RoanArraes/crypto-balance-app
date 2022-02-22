@@ -5,6 +5,13 @@
   font-weight: bold;
 }
 
+@font-face {
+  font-family: "ZenKakuGothicAntiqueRegular";
+  src: local("ZenKakuGothicAntiqueRegular"),
+   url("./utils/fonts/Zen_Kaku_Gothic_Antique/ZenKakuGothicAntique-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
