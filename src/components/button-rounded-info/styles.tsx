@@ -24,7 +24,7 @@ export const Button = styled.button`
   overflow: hidden;
 
   :hover {
-    background-color: #30323F;
+    background-color: ${props => props.theme.colors.button.hoverButton};
     border-radius: 10px;
     cursor: pointer;
   }

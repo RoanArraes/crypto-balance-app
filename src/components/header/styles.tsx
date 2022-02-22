@@ -34,7 +34,7 @@ export const HeaderArea = styled.div`
         text-shadow: ${props => props.theme.shadows.lightBlack0};
 
         &:hover {
-          color: ${props => props.theme.colors.buttonHighligth};
+          color: ${props => props.theme.colors.button.buttonHighligth};
         }
       } 
     }

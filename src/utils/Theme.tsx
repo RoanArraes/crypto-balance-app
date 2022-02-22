@@ -8,10 +8,7 @@ type Props = {
 const theme = {
   colors: {
     white: "#FFFFFF",
-    buttonHighligth: "#1ECBE1",
-    buttonAdd: "#7F9F00",
     black: "#000000",
-    redButtonDelete: "#FF0000",
     rgba: {
       whiteTransparency: "rgba(255,255,255,0.5)"
     },
@@ -21,8 +18,23 @@ const theme = {
       black: "#000000",
       white:"#FFFFFF"
     },
+    body: {
+      background: "#1a1b22"
+    },
+    footer: {
+      background: "rgba(0,0,0,0.5)",
+    },
+    button: {
+      buttonDelete: "#FF0000",
+      buttonAdd: "#7F9F00",
+      buttonHighligth: "#1ECBE1",
+      hoverButton: "#30323F"
+    },
+    table: {
+      background: "#000000"
+    }
   },
-  fonts: ["sans-serif", "RussoOneRegular"],
+  fonts: ["sans-serif", "RussoOneRegular", "ZenKakuGothicAntiqueRegular"],
   fontSizes: {
     micro: "0.7em",
     small: "1em",
