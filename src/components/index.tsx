@@ -6,7 +6,7 @@ import NavBar from "./navbar/NavBar";
 import BoxArea from "./box-area/BoxArea";
 import Label from "./label/Label";
 import ButtonRoundedInfo from "./button-rounded-info/ButtonRoundedInfo";
-import TableHoldings from "./table-holdings/TableHoldings";
+import TablePortfolios from "./table-holdings/TablePortfolios";
 
 export {
   InputRounded,
@@ -17,5 +17,5 @@ export {
   BoxArea,
   Label,
   ButtonRoundedInfo,
-  TableHoldings
+  TablePortfolios
 };

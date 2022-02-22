@@ -4,27 +4,34 @@ export const TableArea = styled.table`
   width: 100%;
   border-collapse: collapse;
 
-  tr {
-    border-bottom: thin solid #30323F;
-    color: ${props => props.theme.colors.white};
-
-    &:nth-child(1){
+  thead {
+    tr {
       border-bottom: none;
       background-color: ${props => props.theme.colors.black};
-    }
+      color: ${props => props.theme.colors.white};
 
-    &:last-child(){
-      border-bottom: none;
+      th {
+        text-align: center;
+        padding: 10px;
+        font-family: ${props => props.theme.fonts[1]};
+        font-size: ${props => props.theme.fontSizes.small};
+        cursor: default;
+      }
     }
   }
 
-  th {
-    text-align: center;
-    padding: 10px;
-    font-family: ${props => props.theme.fonts[1]};
-    font-size: ${props => props.theme.fontSizes.small};
-    cursor: default;
+  tbody {
+    tr {
+      border-bottom: 1px solid #30323F;
+      color: ${props => props.theme.colors.white};
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
   }
+
+
 
   td {
     font-family: ${props => props.theme.fonts[2]};

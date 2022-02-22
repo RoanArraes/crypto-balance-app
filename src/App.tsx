@@ -9,7 +9,7 @@ import {
 
 import {
   Login,
-  WalletHoldings,
+  WalletPortfolios,
   WalletBalance
 } from "./pages";
 
@@ -20,7 +20,7 @@ function App() {
       <div className="App">
         <BrowserRouter>
           <Routes>
-            <Route path={ROUTES.HOME.url} element={<WalletHoldings />} />
+            <Route path={ROUTES.HOME.url} element={<WalletPortfolios />} />
             <Route path={ROUTES.LOGIN.url} element={<Login />} />
             <Route path={ROUTES.BALANCE.url} element={<WalletBalance />} />
           </Routes>

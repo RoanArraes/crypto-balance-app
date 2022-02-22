@@ -6,12 +6,12 @@ import {
 import { CapitalizeFirstLetter } from '../../utils/functions';
 
 type Props = {
-  holdings: HoldingInfoInterface[] 
+  portfolio: HoldingInfoInterface[] 
 }
 
-const renderTable = (holdings: HoldingInfoInterface[]) => {
+const renderTable = (portfolio: HoldingInfoInterface[]) => {
 
-  if (!holdings || !holdings.length) {
+  if (!portfolio || !portfolio.length) {
     return null
   }
 
@@ -20,17 +20,17 @@ const renderTable = (holdings: HoldingInfoInterface[]) => {
       <thead>
         <tr>
           <th>Name</th>
-          <th>Holdings</th>
+          <th>Value</th>
           <th>Profit/Loss</th>
-          <th>Ideal hold</th>
+          <th>Ideal value</th>
           <th>Action</th>
           <th></th>
         </tr>
       </thead>
-        {holdings.map(h => {
+      <tbody>
+        {portfolio.map(h => {
           return(
-            <tbody key={`${h.name}-table-holding`}>
-              <tr>
+              <tr key={`${h.name}-table-portfolio`}>
                 <td>{CapitalizeFirstLetter(h.name)}</td>
                 <td>${h.totalHolding}</td>
                 <td>+ ${h.profit24hrs}</td>
@@ -38,17 +38,17 @@ const renderTable = (holdings: HoldingInfoInterface[]) => {
                 <td>{h.action}</td>
                 <td>:</td>
               </tr>
-            </tbody>
           )
         })}
+      </tbody>
     </TableArea>
   )
 }
 
-export default function TableHoldings({holdings}: Props) {
+export default function TablePortfolios({portfolio}: Props) {
   return(
     <>
-      {renderTable(holdings)}
+      {renderTable(portfolio)}
     </>
   );
 }
