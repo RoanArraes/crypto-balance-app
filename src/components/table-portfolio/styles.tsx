@@ -12,7 +12,7 @@ export const TableArea = styled.table`
 
       th {
         text-align: center;
-        padding: 10px;
+        padding: 10px 0px;
         font-family: ${props => props.theme.fonts[1]};
         font-size: ${props => props.theme.fontSizes.small};
         cursor: default;
