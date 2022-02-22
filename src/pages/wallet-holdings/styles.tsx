@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import ImgAlien from '../../utils/assets/images/svg/alien-head.svg';
-import ImgAlienWhite from '../../utils/assets/images/svg/alien-head-white.svg';
 
 export const Container = styled.div`
   width: 100%;
@@ -9,11 +7,7 @@ export const Container = styled.div`
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: center;
-  background-color: ${props => props.theme.colors.white};
-  background-image: url(${ImgAlien});
-  background-repeat: repeat;
-  background-position: center;
-  background-size: 70px;
+  background-color: ${props => props.theme.colors.body.background};
   overflow: auto;
 `;
 
@@ -30,7 +24,7 @@ export const BodyArea = styled.div`
 export const FooterArea = styled.div`
   width: 100%;
   margin-top: auto;
-  background-color: ${props => props.theme.colors.header.lightBlack};
+  background-color: ${props => props.theme.colors.footer.background};
 `;
 
 export const GroupBoxArea = {
@@ -39,6 +33,7 @@ export const GroupBoxArea = {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 30px;
   `,
   Left: styled.div`
     display: flex;
@@ -62,17 +57,12 @@ export const GroupBoxArea = {
   `,
   GroupButtonInfoHolding: styled.div`
     margin: 20px 0px 20px 0;
-    overflow-x: hidden;
-    overflow-y: auto;
-    border: 1px solid transparent;
-    border-radius: 10px;
-    height: 500px;
 
     button {
       width: 150px;
 ;
       label {
-        font-size: ${props => props.theme.fontSizes.medium};
+        font-size: ${props => props.theme.fontSizes.medium1};
       }
     }
   `,
@@ -80,9 +70,9 @@ export const GroupBoxArea = {
     div:nth-child(1) {
       text-align: center;
       label {
-        margin: 15px 0px 5px 0px;
-        font-size: ${props => props.theme.fontSizes.medium};
+        font-size: ${props => props.theme.fontSizes.medium1};
         text-shadow: ${props => props.theme.shadows.lightBlack0};
+        color: ${props => props.theme.colors.white};
       }
     }
 
@@ -91,6 +81,7 @@ export const GroupBoxArea = {
       label {
         font-size: ${props => props.theme.fontSizes.medium};
         text-shadow: ${props => props.theme.shadows.lightBlack0};
+        color: ${props => props.theme.colors.white};
       }
     }
   `,
@@ -99,10 +90,7 @@ export const GroupBoxArea = {
   `,
   GroupTableHoldings: styled.div`
     width: calc(100% - 20px);
-    border: 1px solid black;
-    border-radius: 10px;
-    height: 640px;
-    overflow: auto;
+    margin-top: 20px;
     
     table {
       width: 100%;
