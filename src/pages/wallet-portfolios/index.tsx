@@ -13,7 +13,7 @@ import {
   Label,
   ButtonRounded,
   ButtonRoundedInfo,
-  TablePortfolios
+  TablePortfolio
  } from '../../components';
 
 import { 
@@ -89,7 +89,7 @@ export default function WalletPortfolios(props: Props) {
           <Label label={LABELS.PORTFOLIO_TABLE_TITLE} />
         </GroupBoxArea.GroupLabels>
         <GroupBoxArea.GroupTableHoldings>
-          <TablePortfolios portfolio={portfolio}/>
+          <TablePortfolio portfolio={portfolio}/>
         </GroupBoxArea.GroupTableHoldings>
       </GroupBoxArea.Right>
     )

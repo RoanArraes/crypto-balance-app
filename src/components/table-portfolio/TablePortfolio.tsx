@@ -45,7 +45,7 @@ const renderTable = (portfolio: HoldingInfoInterface[]) => {
   )
 }
 
-export default function TablePortfolios({portfolio}: Props) {
+export default function TablePortfolio({portfolio}: Props) {
   return(
     <>
       {renderTable(portfolio)}

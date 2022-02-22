@@ -93,6 +93,7 @@ export const GroupBoxArea = {
     border: 1px solid transparent;
     border-radius: 10px;
     overflow: hidden;
+    border: 1px solid black;
     
     table {
       width: 100%;
