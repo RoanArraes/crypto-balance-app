@@ -87,9 +87,15 @@ export const GroupBoxArea = {
   GroupButtonAdd: styled.div`
 
   `,
+  InfoMessage: styled.div`
+    padding: 20px 0px;
+    margin-bottom: 20px;
+    color: ${props => props.theme.colors.white};
+    text-align: center;
+  `,
   GroupTableHoldings: styled.div`
-    width: calc(100% - 20px);
-    margin-top: 20px;
+    width: calc(100% - 40px);
+    margin: 20px 0px 40px 0px;
     border: 1px solid transparent;
     border-radius: 10px;
     overflow: hidden;

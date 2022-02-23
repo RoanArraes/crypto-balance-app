@@ -13,7 +13,8 @@ import {
   Label,
   ButtonRounded,
   ButtonRoundedInfo,
-  TablePortfolio
+  TablePortfolio,
+  TableTransactions
  } from '../../components';
 
 import { 
@@ -44,7 +45,8 @@ const portfolio = MockWalletHoldings;
 
 export default function WalletPortfolios(props: Props) {
 
-  const [selectedPortfolio, setSelectedPortfolio] = useState({ id: ''});
+  const [selectedPortfolio, setSelectedPortfolio] = useState<HoldingInfoInterface | undefined | false >(false);
+
 
   const renderButtonPortfolio = (portfolio: HoldingInfoInterface[]) => {
     if(!portfolio || !portfolio.length) {
@@ -58,7 +60,8 @@ export default function WalletPortfolios(props: Props) {
             key={h.name}
             id={h.id}
             label={h.name} 
-            onClick={(e) => console.log("clicou", e.currentTarget.id)}
+            onClick={(e) => findSelectedPortfolio(e.currentTarget.id)}
+            isSelected={selectedPortfolio ? selectedPortfolio.id === h.id : false}
           />
         );
       })
@@ -86,13 +89,43 @@ export default function WalletPortfolios(props: Props) {
     return(
       <GroupBoxArea.Right>
         <GroupBoxArea.GroupLabels>
-          <Label label={LABELS.PORTFOLIO_TABLE_TITLE} />
+          <Label label={LABELS.PORTFOLIO_TABLE_TITLE + ` - ${selectedPortfolio ? selectedPortfolio.name : ""}`} />
         </GroupBoxArea.GroupLabels>
-        <GroupBoxArea.GroupTableHoldings>
-          <TablePortfolio portfolio={portfolio}/>
-        </GroupBoxArea.GroupTableHoldings>
+
+          {selectedPortfolio ?
+            <GroupBoxArea.GroupTableHoldings>
+              <TablePortfolio portfolio={[selectedPortfolio]}/>
+            </GroupBoxArea.GroupTableHoldings>
+            :
+            <GroupBoxArea.InfoMessage>
+              Any Portfolio.
+            </GroupBoxArea.InfoMessage>
+          }
+
+        <GroupBoxArea.GroupLabels>
+          <Label label={LABELS.TRANSACTIONS_TABLE_TITLE} />
+        </GroupBoxArea.GroupLabels>
+        {selectedPortfolio && selectedPortfolio.transactions.length ?
+          <GroupBoxArea.GroupTableHoldings>
+            <TableTransactions transactions={selectedPortfolio.transactions}/>
+          </GroupBoxArea.GroupTableHoldings>
+          :
+          <GroupBoxArea.InfoMessage>
+            Any Transaction.
+          </GroupBoxArea.InfoMessage>
+        }
       </GroupBoxArea.Right>
     )
+  }
+
+  const findSelectedPortfolio = (id: string) => {
+    if (!id || id === "") {
+      return null
+    }
+
+    const item = portfolio.find(p => p.id === id);
+
+    setSelectedPortfolio(item);
   }
 
   return(
