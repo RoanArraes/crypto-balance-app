@@ -28,7 +28,8 @@ const theme = {
       buttonDelete: "#FF0000",
       buttonAdd: "#7F9F00",
       buttonHighligth: "#1ECBE1",
-      hoverButton: "#30323F"
+      hoverButton: "#30323F",
+      clickButton: "#30323F"
     },
     table: {
       background: "#000000"
