@@ -8,7 +8,8 @@ const MockWalletHoldings: HoldingInfoInterface[] = [
     profit24hrs: 0.00,
     loss24hrs: 100.00,
     idealHold: 100.00,
-    action: 'Rebalance'
+    action: 'Rebalance',
+    transactions: []
   },
   {
     id: "2",
@@ -17,7 +18,149 @@ const MockWalletHoldings: HoldingInfoInterface[] = [
     profit24hrs: 0.00,
     loss24hrs: 100.00,
     idealHold: 100.00,
-    action: 'Rebalance'
+    action: 'Rebalance',
+    transactions: [
+      {
+        name: "BNB",
+        idealHold: "100",
+        profit24hrs: "10",
+        action: "Rebalance",
+        purchases: [
+          {
+            value: "100",
+            date: "2022-02-10"
+          },
+          {
+            value: "130",
+            date: "2022-01-10"
+          }
+        ],
+        sales:[
+          {
+            value: "10",
+            date: "2022-02-10"
+          },
+          {
+            value: "30",
+            date: "2022-01-10"
+          }
+        ],
+        avgBuyPrice: "115",
+        totalValue: "230"
+      },
+      {
+        name: "ETH",
+        idealHold: "100",
+        profit24hrs: "10",
+        action: "Rebalance",
+        purchases: [
+          {
+            value: "100",
+            date: "2022-02-10"
+          },
+          {
+            value: "130",
+            date: "2022-01-10"
+          }
+        ],
+        sales:[
+          {
+            value: "10",
+            date: "2022-02-10"
+          },
+          {
+            value: "30",
+            date: "2022-01-10"
+          }
+        ],
+        avgBuyPrice: "115",
+        totalValue: "230"
+      },
+      {
+        name: "GALA",
+        idealHold: "100",
+        profit24hrs: "10",
+        action: "Rebalance",
+        purchases: [
+          {
+            value: "100",
+            date: "2022-02-10"
+          },
+          {
+            value: "130",
+            date: "2022-01-10"
+          }
+        ],
+        sales:[
+          {
+            value: "10",
+            date: "2022-02-10"
+          },
+          {
+            value: "30",
+            date: "2022-01-10"
+          }
+        ],
+        avgBuyPrice: "115",
+        totalValue: "230"
+      },
+      {
+        name: "ADA",
+        idealHold: "100",
+        profit24hrs: "10",
+        action: "Rebalance",
+        purchases: [
+          {
+            value: "100",
+            date: "2022-02-10"
+          },
+          {
+            value: "130",
+            date: "2022-01-10"
+          }
+        ],
+        sales:[
+          {
+            value: "10",
+            date: "2022-02-10"
+          },
+          {
+            value: "30",
+            date: "2022-01-10"
+          }
+        ],
+        avgBuyPrice: "115",
+        totalValue: "230"
+      },
+      {
+        name: "AXS",
+        idealHold: "100",
+        profit24hrs: "10",
+        action: "Rebalance",
+        purchases: [
+          {
+            value: "100",
+            date: "2022-02-10"
+          },
+          {
+            value: "130",
+            date: "2022-01-10"
+          }
+        ],
+        sales:[
+          {
+            value: "10",
+            date: "2022-02-10"
+          },
+          {
+            value: "30",
+            date: "2022-01-10"
+          }
+        ],
+        avgBuyPrice: "115",
+        totalValue: "230"
+      }
+    ]
   },
   {
     id: "3",
@@ -26,7 +169,37 @@ const MockWalletHoldings: HoldingInfoInterface[] = [
     profit24hrs: 0.00,
     loss24hrs: 100.00,
     idealHold: 100.00,
-    action: 'Rebalance'
+    action: 'Rebalance',
+    transactions: [
+      {
+        name: "BNB",
+        idealHold: "100",
+        profit24hrs: "10",
+        action: "Rebalance",
+        purchases: [
+          {
+            value: "100",
+            date: "2022-02-10"
+          },
+          {
+            value: "130",
+            date: "2022-01-10"
+          }
+        ],
+        sales:[
+          {
+            value: "10",
+            date: "2022-02-10"
+          },
+          {
+            value: "30",
+            date: "2022-01-10"
+          }
+        ],
+        avgBuyPrice: "115",
+        totalValue: "230"
+      }
+    ]
   },
   {
     id: "4",
@@ -35,7 +208,37 @@ const MockWalletHoldings: HoldingInfoInterface[] = [
     profit24hrs: 0.00,
     loss24hrs: 100.00,
     idealHold: 100.00,
-    action: 'Rebalance'
+    action: 'Rebalance',
+    transactions: [
+      {
+        name: "BNB",
+        idealHold: "100",
+        profit24hrs: "10",
+        action: "Rebalance",
+        purchases: [
+          {
+            value: "100",
+            date: "2022-02-10"
+          },
+          {
+            value: "130",
+            date: "2022-01-10"
+          }
+        ],
+        sales:[
+          {
+            value: "10",
+            date: "2022-02-10"
+          },
+          {
+            value: "30",
+            date: "2022-01-10"
+          }
+        ],
+        avgBuyPrice: "115",
+        totalValue: "230"
+      }
+    ]
   },
   {
     id: "5",
@@ -44,7 +247,289 @@ const MockWalletHoldings: HoldingInfoInterface[] = [
     profit24hrs: 0.00,
     loss24hrs: 100.00,
     idealHold: 100.00,
-    action: 'Rebalance'
+    action: 'Rebalance',
+    transactions: [
+      {
+        name: "BNB",
+        idealHold: "100",
+        profit24hrs: "10",
+        action: "Rebalance",
+        purchases: [
+          {
+            value: "100",
+            date: "2022-02-10"
+          },
+          {
+            value: "130",
+            date: "2022-01-10"
+          }
+        ],
+        sales:[
+          {
+            value: "10",
+            date: "2022-02-10"
+          },
+          {
+            value: "30",
+            date: "2022-01-10"
+          }
+        ],
+        avgBuyPrice: "115",
+        totalValue: "230"
+      },
+      {
+        name: "ETH",
+        idealHold: "100",
+        profit24hrs: "10",
+        action: "Rebalance",
+        purchases: [
+          {
+            value: "100",
+            date: "2022-02-10"
+          },
+          {
+            value: "130",
+            date: "2022-01-10"
+          }
+        ],
+        sales:[
+          {
+            value: "10",
+            date: "2022-02-10"
+          },
+          {
+            value: "30",
+            date: "2022-01-10"
+          }
+        ],
+        avgBuyPrice: "115",
+        totalValue: "230"
+      },
+      {
+        name: "GALA",
+        idealHold: "100",
+        profit24hrs: "10",
+        action: "Rebalance",
+        purchases: [
+          {
+            value: "100",
+            date: "2022-02-10"
+          },
+          {
+            value: "130",
+            date: "2022-01-10"
+          }
+        ],
+        sales:[
+          {
+            value: "10",
+            date: "2022-02-10"
+          },
+          {
+            value: "30",
+            date: "2022-01-10"
+          }
+        ],
+        avgBuyPrice: "115",
+        totalValue: "230"
+      },
+      {
+        name: "ADA",
+        idealHold: "100",
+        profit24hrs: "10",
+        action: "Rebalance",
+        purchases: [
+          {
+            value: "100",
+            date: "2022-02-10"
+          },
+          {
+            value: "130",
+            date: "2022-01-10"
+          }
+        ],
+        sales:[
+          {
+            value: "10",
+            date: "2022-02-10"
+          },
+          {
+            value: "30",
+            date: "2022-01-10"
+          }
+        ],
+        avgBuyPrice: "115",
+        totalValue: "230"
+      },
+      {
+        name: "AXS",
+        idealHold: "100",
+        profit24hrs: "10",
+        action: "Rebalance",
+        purchases: [
+          {
+            value: "100",
+            date: "2022-02-10"
+          },
+          {
+            value: "130",
+            date: "2022-01-10"
+          }
+        ],
+        sales:[
+          {
+            value: "10",
+            date: "2022-02-10"
+          },
+          {
+            value: "30",
+            date: "2022-01-10"
+          }
+        ],
+        avgBuyPrice: "115",
+        totalValue: "230"
+      },
+      {
+        name: "BNB",
+        idealHold: "100",
+        profit24hrs: "10",
+        action: "Rebalance",
+        purchases: [
+          {
+            value: "100",
+            date: "2022-02-10"
+          },
+          {
+            value: "130",
+            date: "2022-01-10"
+          }
+        ],
+        sales:[
+          {
+            value: "10",
+            date: "2022-02-10"
+          },
+          {
+            value: "30",
+            date: "2022-01-10"
+          }
+        ],
+        avgBuyPrice: "115",
+        totalValue: "230"
+      },
+      {
+        name: "ETH",
+        idealHold: "100",
+        profit24hrs: "10",
+        action: "Rebalance",
+        purchases: [
+          {
+            value: "100",
+            date: "2022-02-10"
+          },
+          {
+            value: "130",
+            date: "2022-01-10"
+          }
+        ],
+        sales:[
+          {
+            value: "10",
+            date: "2022-02-10"
+          },
+          {
+            value: "30",
+            date: "2022-01-10"
+          }
+        ],
+        avgBuyPrice: "115",
+        totalValue: "230"
+      },
+      {
+        name: "GALA",
+        idealHold: "100",
+        profit24hrs: "10",
+        action: "Rebalance",
+        purchases: [
+          {
+            value: "100",
+            date: "2022-02-10"
+          },
+          {
+            value: "130",
+            date: "2022-01-10"
+          }
+        ],
+        sales:[
+          {
+            value: "10",
+            date: "2022-02-10"
+          },
+          {
+            value: "30",
+            date: "2022-01-10"
+          }
+        ],
+        avgBuyPrice: "115",
+        totalValue: "230"
+      },
+      {
+        name: "ADA",
+        idealHold: "100",
+        profit24hrs: "10",
+        action: "Rebalance",
+        purchases: [
+          {
+            value: "100",
+            date: "2022-02-10"
+          },
+          {
+            value: "130",
+            date: "2022-01-10"
+          }
+        ],
+        sales:[
+          {
+            value: "10",
+            date: "2022-02-10"
+          },
+          {
+            value: "30",
+            date: "2022-01-10"
+          }
+        ],
+        avgBuyPrice: "115",
+        totalValue: "230"
+      },
+      {
+        name: "AXS",
+        idealHold: "100",
+        profit24hrs: "10",
+        action: "Rebalance",
+        purchases: [
+          {
+            value: "100",
+            date: "2022-02-10"
+          },
+          {
+            value: "130",
+            date: "2022-01-10"
+          }
+        ],
+        sales:[
+          {
+            value: "10",
+            date: "2022-02-10"
+          },
+          {
+            value: "30",
+            date: "2022-01-10"
+          }
+        ],
+        avgBuyPrice: "115",
+        totalValue: "230"
+      }
+    ]
   },
 ]
 
