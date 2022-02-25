@@ -1,6 +1,7 @@
 import { 
   ButtonRounded,
-  InputRounded
+  InputRounded,
+  ListWithSearch
  } from '../../../components';
 
 import {
@@ -50,6 +51,30 @@ export const ModalCreatePortfolio = ({
         label='create'
         maxWidth='500px'
         marginTop='20px'
+      />
+    </Wrapper>
+  )
+}
+
+export const ModalCreateCoin = ({
+  submitModalCreate,
+  nameLength
+}: Props) => {
+  return(
+    <Wrapper
+      flexDirection='column'
+      alignItems='flex-start'
+      margin='10px'
+      maxWidth='500px'
+      flexWrap="wrap"
+    >
+      <Label
+        fontSize='micro'
+      >
+        Search coin
+      </Label>
+      <ListWithSearch
+        maxHeight="400px"
       />
     </Wrapper>
   )

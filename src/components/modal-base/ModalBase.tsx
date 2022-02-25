@@ -14,12 +14,13 @@ import {
 } from '../'
 
 interface Props {
+  labelTitle?: string,
   children: React.ReactNode,
   showModal: boolean | null,
   onCloseModal: () => void
 };
 
-export default function ModalBase({ showModal, children, onCloseModal }: Props) {
+export default function ModalBase({ showModal, children, labelTitle, onCloseModal }: Props) {
 
   const[ isActive, setIsActive ] = useState(false);
 
@@ -41,7 +42,7 @@ export default function ModalBase({ showModal, children, onCloseModal }: Props) 
           <Label
             fontSize='medium1'
           >
-            Create portfolio
+            {labelTitle}
           </Label>
           <ButtonTypes
             typeButton="remove"

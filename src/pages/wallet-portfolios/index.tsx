@@ -30,6 +30,7 @@ import {
 } from '../../utils/mocks';
 
 import {
+  ModalCreateCoin,
   ModalCreatePortfolio
 } from './components/Modals';
 
@@ -52,6 +53,7 @@ const WalletPortfolios: React.FC = (props: Props) => {
 
   const [selectedPortfolio, setSelectedPortfolio] = useState<HoldingInfoInterface | undefined | false >(false);
   const [isActiveModal, setIsActiveModal] = useState<null | boolean>(null);
+  const [isActiveModalCreateCoin, setIsActiveModalCreateCoin] = useState<null | boolean>(null);
   const [form, setForm] = useState<CreatePortfolioInterface>({name: ""});
 
   const renderButtonPortfolio = (portfolio: HoldingInfoInterface[]) => {
@@ -128,12 +130,13 @@ const WalletPortfolios: React.FC = (props: Props) => {
                 flexDirection='column'
               >
                 <GroupBoxArea.InfoMessage>
-                  Nothing to show, register one transaction.
+                  Nothing to show, first register one coin.
                 </GroupBoxArea.InfoMessage>
                 <ButtonRounded
                   type='button'
-                  label='Register transaction'
+                  label='Register coin'
                   maxWidth='400px'
+                  onClick={() => setIsActiveModalCreateCoin(true)}
                 />
               </Wrapper>
             }
@@ -186,6 +189,17 @@ const WalletPortfolios: React.FC = (props: Props) => {
         onCloseModal={() => setIsActiveModal(false)}
         children={
           <ModalCreatePortfolio
+            submitModalCreate={(e) => setForm({name: e.currentTarget.value})}
+            nameLength={form.name.length}
+          />
+        }
+      />
+      <ModalBase 
+        labelTitle='Register coin'
+        showModal={isActiveModalCreateCoin}
+        onCloseModal={() => setIsActiveModalCreateCoin(false)}
+        children={
+          <ModalCreateCoin
             submitModalCreate={(e) => setForm({name: e.currentTarget.value})}
             nameLength={form.name.length}
           />
