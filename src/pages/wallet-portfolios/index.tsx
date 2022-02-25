@@ -1,20 +1,26 @@
+import React from 'react';
+
 import {
   Container,
   HeaderArea,
   BodyArea,
   FooterArea,
-  GroupBoxArea
+  GroupBoxArea,
+  Wrapper,
+  Label
 } from './styles';
 
 import { 
   Header,
   Footer,
   BoxArea,
-  Label,
+  //Label,
   ButtonRounded,
   ButtonRoundedInfo,
   TablePortfolio,
-  TableTransactions
+  TableTransactions,
+  ModalBase,
+  InputRounded
  } from '../../components';
 
 import { 
@@ -41,11 +47,10 @@ const links: LinksNavBarInterface[] = [
 
 const portfolio = MockWalletHoldings;
 
-
-
-export default function WalletPortfolios(props: Props) {
+const WalletPortfolios: React.FC = (props: Props) => {
 
   const [selectedPortfolio, setSelectedPortfolio] = useState<HoldingInfoInterface | undefined | false >(false);
+  const [isActiveModal, setIsActiveModal] = useState<null | boolean>(null);
 
 
   const renderButtonPortfolio = (portfolio: HoldingInfoInterface[]) => {
@@ -71,15 +76,25 @@ export default function WalletPortfolios(props: Props) {
   const AreaLeft = () => {
     return(
       <GroupBoxArea.Left>
-        <GroupBoxArea.GroupLabels>
-          <Label label={LABELS.PORTFOLIO_USER} />
-          <Label label='$ 100,00' />
-        </GroupBoxArea.GroupLabels>
+          <Label
+            textUppercase
+          >
+            {LABELS.PORTFOLIO_USER}
+          </Label>
+          <Label
+            textUppercase
+          >
+            $ 100,00
+          </Label>
         <GroupBoxArea.GroupButtonInfoHolding>
           {renderButtonPortfolio(portfolio)}
         </GroupBoxArea.GroupButtonInfoHolding>
         <GroupBoxArea.GroupButtonAdd>
-          <ButtonRounded label={LABEL_BUTTONS.CREATE_PORTFOLIO} type="button" />
+          <ButtonRounded 
+            label={LABEL_BUTTONS.CREATE_PORTFOLIO} 
+            type="button" 
+            onClick={() => setIsActiveModal(true)}
+          />
         </GroupBoxArea.GroupButtonAdd>
       </GroupBoxArea.Left>
     )
@@ -88,33 +103,75 @@ export default function WalletPortfolios(props: Props) {
   const AreaRight = () => {
     return(
       <GroupBoxArea.Right>
-        <GroupBoxArea.GroupLabels>
-          <Label label={LABELS.PORTFOLIO_TABLE_TITLE + ` - ${selectedPortfolio ? selectedPortfolio.name : ""}`} />
-        </GroupBoxArea.GroupLabels>
-
+        <Label
+          textUppercase
+        >
+          {LABELS.PORTFOLIO_TABLE_TITLE + `${selectedPortfolio ? ' - '+ selectedPortfolio.name : ""}`}
+        </Label> 
           {selectedPortfolio ?
+          <>
             <GroupBoxArea.GroupTableHoldings>
               <TablePortfolio portfolio={[selectedPortfolio]}/>
             </GroupBoxArea.GroupTableHoldings>
+            <Label
+              textUppercase
+            >
+              {LABELS.TRANSACTIONS_TABLE_TITLE}
+            </Label>
+            {selectedPortfolio && selectedPortfolio.transactions.length ?
+              <GroupBoxArea.GroupTableHoldings>
+                <TableTransactions transactions={selectedPortfolio.transactions}/>
+              </GroupBoxArea.GroupTableHoldings>
+              :
+              <GroupBoxArea.InfoMessage>
+                Nothing to show, register one transaction.
+              </GroupBoxArea.InfoMessage>
+            }
+          </>
             :
             <GroupBoxArea.InfoMessage>
-              Any Portfolio.
+              Create or select your Portfolio.
             </GroupBoxArea.InfoMessage>
           }
 
-        <GroupBoxArea.GroupLabels>
-          <Label label={LABELS.TRANSACTIONS_TABLE_TITLE} />
-        </GroupBoxArea.GroupLabels>
-        {selectedPortfolio && selectedPortfolio.transactions.length ?
-          <GroupBoxArea.GroupTableHoldings>
-            <TableTransactions transactions={selectedPortfolio.transactions}/>
-          </GroupBoxArea.GroupTableHoldings>
-          :
-          <GroupBoxArea.InfoMessage>
-            Any Transaction.
-          </GroupBoxArea.InfoMessage>
-        }
       </GroupBoxArea.Right>
+    )
+  }
+
+  const modalCreatePortfolio = () => {
+    return(
+      <Wrapper
+        flexDirection='column'
+        alignItems='flex-start'
+        justifyContent='center'
+        margin='10px'
+        maxWidth='600px'
+        flexWrap="wrap"
+      >
+        <Label
+          fontSize='micro'
+        >
+          Portfolio name
+        </Label>
+        <InputRounded 
+          placeholder="Insert portfolio name" 
+          type="text" 
+          maxWidth='593px'
+          width='100%'
+          margin="10px 0px"
+        />
+        <Label
+          fontSize='micro'
+        >
+          0/32 caracteres
+        </Label>
+        <ButtonRounded 
+          type='button' 
+          label='create'
+          maxWidth='600px'
+          marginTop='20px'
+        />
+      </Wrapper>
     )
   }
 
@@ -147,6 +204,13 @@ export default function WalletPortfolios(props: Props) {
       <FooterArea>
         <Footer label={LABELS.POWERED_BY} />
       </FooterArea>
+      <ModalBase 
+        showModal={isActiveModal}
+        onCloseModal={() => setIsActiveModal(false)}
+        children={modalCreatePortfolio()}
+      />
     </Container>
   )
 };
+
+export default WalletPortfolios;
