@@ -7,10 +7,9 @@ import {
   InputRoundedSearch
 } from '../../components';
 
-const listMock: {
-  id: string,
-  name: string
-}[] = [];
+import { MockListCoins } from '../../utils/mocks';
+
+const listMock = MockListCoins;
 
 interface Props {
   maxHeight?: string; 

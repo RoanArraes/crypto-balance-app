@@ -1,5 +1,31 @@
 import {HoldingInfoInterface} from '../utils/interfaces'
 
+const MockListCoins: {
+  name: string,
+  id: string
+}[] = [
+  {
+    id: "12",
+    name: "bnb"
+  },
+  {
+    id: "13",
+    name: "eth"
+  },
+  {
+    id: "14",
+    name: "gala"
+  },
+  {
+    id: "15",
+    name: "axs"
+  },
+  {
+    id: "16",
+    name: "brise"
+  }
+]
+
 const MockWalletHoldings: HoldingInfoInterface[] = [
   {
     id: "1",
@@ -533,4 +559,4 @@ const MockWalletHoldings: HoldingInfoInterface[] = [
   },
 ]
 
-export { MockWalletHoldings };
+export { MockWalletHoldings, MockListCoins };
