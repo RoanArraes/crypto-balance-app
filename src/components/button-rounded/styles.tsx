@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+interface Props {
+  maxWidth?: string;
+  marginTop?: string;
+}
+
 export const Label = styled.label`
   font-family: ${props => props.theme.fonts[1]};
   font-size: ${props => props.theme.fontSizes.medium};
@@ -7,16 +12,11 @@ export const Label = styled.label`
   text-transform: uppercase;
 `;
 
-export const ButtonArea = styled.div`
+export const Button = styled.button<Props>`
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
-export const Button = styled.button`
-  width: 100%;
+  max-width: ${props => props.maxWidth ? props.maxWidth : '200px'};
   height: 60px;
+  margin-top: ${props => props.marginTop ? props.marginTop : '0px'};
   border: 1px solid transparent;
   border-radius: 10px;
   background-color: ${props => props.theme.colors.button.buttonAdd};

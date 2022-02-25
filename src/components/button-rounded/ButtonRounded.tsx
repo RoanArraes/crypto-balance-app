@@ -1,7 +1,6 @@
 import React from 'react';
 
 import {
-  ButtonArea,
   Button,
   Label
 } from './styles';
@@ -9,15 +8,21 @@ import {
 type Props = {
   label?: string;
   type: 'button' | 'submit' | 'reset';
+  onClick?: () => void ;
+  maxWidth?: string;
+  marginTop?: string;
 };
 
-export function ButtonRounded({label, type}: Props) {
+export function ButtonRounded({label, onClick, type, maxWidth, marginTop}: Props) {
   return(
-    <ButtonArea>
-      <Button type={type}>
-        <Label>{label}</Label>
-      </Button>
-    </ButtonArea>
+    <Button 
+      type={type} 
+      onClick={onClick}
+      maxWidth={maxWidth}
+      marginTop={marginTop}
+    >
+      <Label>{label}</Label>
+    </Button>
   )
 }
 

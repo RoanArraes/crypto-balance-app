@@ -1,7 +1,8 @@
 import { LinksNavBarInterface } from './LinksNavBar.interfaces';
-import { HoldingInfoInterface } from './HoldingInfo.interface';
+import { HoldingInfoInterface, TransactionsPortfolioInterface } from './HoldingInfo.interface';
 
 export type {
   LinksNavBarInterface,
-  HoldingInfoInterface
+  HoldingInfoInterface,
+  TransactionsPortfolioInterface
 }

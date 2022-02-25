@@ -1,11 +1,16 @@
 import styled from 'styled-components';
 
+interface Props {
+  isSelected: boolean
+}
+
 export const Label = styled.label`
   font-family: ${props => props.theme.fonts[1]};
   font-size: ${props => props.theme.fontSizes.small};
   color: ${props => props.theme.colors.white};
   text-overflow: ellipsis;
   overflow: hidden;
+  cursor: pointer;
 `;
 
 export const ButtonArea = styled.div`
@@ -14,18 +19,13 @@ export const ButtonArea = styled.div`
   justify-content: center;
 `;
 
-export const Button = styled.button`
+export const Button = styled.button<Props>`
   height: 60px;
   padding: 0px 10px;
   border: none;
-  background-color: transparent;
-  cursor: pointer;
+  background-color: ${props => props.isSelected ? props.theme.colors.button.clickButton : "transparent"};
+  border-radius: 10px;
   text-overflow: ellipsis;
   overflow: hidden;
-
-  :hover {
-    background-color: ${props => props.theme.colors.button.hoverButton};
-    border-radius: 10px;
-    cursor: pointer;
-  }
+  cursor: pointer;
 `;

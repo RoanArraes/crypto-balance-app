@@ -11,7 +11,7 @@ type Props = {
 
 const renderTable = (portfolio: HoldingInfoInterface[]) => {
 
-  if (!portfolio || !portfolio.length) {
+  if (!portfolio) {
     return null
   }
 

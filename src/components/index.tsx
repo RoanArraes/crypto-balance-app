@@ -7,6 +7,9 @@ import BoxArea from "./box-area/BoxArea";
 import Label from "./label/Label";
 import ButtonRoundedInfo from "./button-rounded-info/ButtonRoundedInfo";
 import TablePortfolio from "./table-portfolio/TablePortfolio";
+import TableTransactions from "./table-transactions/TableTransactions";
+import ModalBase from "./modal-base/ModalBase";
+import ButtonTypes from './button-types/ButtonTypes';
 
 export {
   InputRounded,
@@ -17,5 +20,8 @@ export {
   BoxArea,
   Label,
   ButtonRoundedInfo,
-  TablePortfolio
+  TablePortfolio,
+  TableTransactions,
+  ModalBase,
+  ButtonTypes
 };

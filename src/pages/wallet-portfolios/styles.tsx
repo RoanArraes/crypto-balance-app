@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { PageItemWrapper } from "../../helpers/ItemWrapper";
+import { PageText } from "../../helpers/PageText";
 
 export const Container = styled.div`
   width: 100%;
@@ -65,31 +67,18 @@ export const GroupBoxArea = {
       }
     }
   `,
-  GroupLabels: styled.div`
-    div:nth-child(1) {
-      text-align: center;
-      label {
-        font-size: ${props => props.theme.fontSizes.medium1};
-        text-shadow: ${props => props.theme.shadows.lightBlack0};
-        color: ${props => props.theme.colors.white};
-      }
-    }
-
-   div:nth-child(2) {
-      text-align: center;
-      label {
-        font-size: ${props => props.theme.fontSizes.medium};
-        text-shadow: ${props => props.theme.shadows.lightBlack0};
-        color: ${props => props.theme.colors.white};
-      }
-    }
-  `,
   GroupButtonAdd: styled.div`
 
   `,
+  InfoMessage: styled.div`
+    padding: 20px 0px;
+    margin-bottom: 20px;
+    color: ${props => props.theme.colors.white};
+    text-align: center;
+  `,
   GroupTableHoldings: styled.div`
-    width: calc(100% - 20px);
-    margin-top: 20px;
+    width: calc(100% - 40px);
+    margin: 20px 0px 40px 0px;
     border: 1px solid transparent;
     border-radius: 10px;
     overflow: hidden;
@@ -100,3 +89,22 @@ export const GroupBoxArea = {
     }
   `,
 }
+
+export const Wrapper = styled(PageItemWrapper)`
+  width: 100%;
+  display: ${props => props.display ? props.display : "flex"};
+  flex-direction: ${props => props.flexDirection ? props.flexDirection : "row"};
+  align-items: ${props => props.alignItems ? props.alignItems : "center"};
+  max-width: ${props => props.maxWidth ? props.maxWidth : "500px"};
+  margin: ${props => props.margin ? props.margin : "0px"};
+  justify-content: ${props => props.justifyContent ? props.justifyContent : "flex-start"};
+  flex-wrap: ${props => props.flexWrap ? props.flexWrap : "none"};
+`;
+
+export const Label = styled(PageText)`
+  font-family: ${props => props.theme.fonts[1]};
+  font-size: ${props => props.fontSize ? props.theme.fontSizes[props.fontSize] : props.theme.fontSizes.small};
+  color: ${props => props.color ? props.color : props.theme.colors.white};
+  text-shadow: ${props => props.textShadow ? props.theme.shadows.lightWhite0 : "none"};
+  text-transform: ${props => props.textUppercase ? "uppercase" : "none"};
+`;
