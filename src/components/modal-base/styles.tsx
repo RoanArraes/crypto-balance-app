@@ -19,7 +19,7 @@ export const Container = styled.div<Props>`
 
 export const ModalArea = styled.div`
   width: 100%;
-  max-width: 600px;
+  max-width: 500px;
   padding: 15px;
   background-color: ${props => props.theme.colors.body.background};
   border-radius: 10px;
