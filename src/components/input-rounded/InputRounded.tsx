@@ -1,21 +1,29 @@
 import {
-  InputArea,
-  InputField,
-  Label
+  InputField
 } from './styles';
 
 type Props = {
   label?: string;
   type: string;
   placeholder?: string;
+  width?: string;
+  maxWidth?: string;
+  margin?: string;
 };
 
-function InputRounded({label, type, placeholder}: Props) {
+function InputRounded({
+  type,
+  placeholder,
+  margin,
+  maxWidth
+}: Props) {
   return (
-    <InputArea>
-      <Label>{label}</Label>
-      <InputField type={type} placeholder={placeholder}/>
-    </InputArea>
+    <InputField
+      margin={margin}
+      type={type}
+      placeholder={placeholder}
+      maxWidth={maxWidth}
+    />
   )
 }
 
