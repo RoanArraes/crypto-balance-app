@@ -26,10 +26,14 @@ const theme = {
     },
     button: {
       buttonDelete: "#FF0000",
-      buttonAdd: "#7F9F00",
+      buttonAdd: "#FFBE0B",
       buttonHighligth: "#1ECBE1",
       hoverButton: "#30323F",
-      clickButton: "#30323F"
+      clickButton: "#30323F",
+    },
+    input: {
+      background: "#30323F",
+      backgroundHighlight: "rgba(255,255,255,0.3)",
     },
     table: {
       background: "#000000"

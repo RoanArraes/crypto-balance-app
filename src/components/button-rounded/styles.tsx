@@ -8,7 +8,7 @@ interface Props {
 export const Label = styled.label`
   font-family: ${props => props.theme.fonts[1]};
   font-size: ${props => props.theme.fontSizes.medium};
-  color: ${props => props.theme.colors.white};
+  color: ${props => props.theme.colors.black};
   text-transform: uppercase;
 `;
 
@@ -27,7 +27,7 @@ export const Button = styled.button<Props>`
     border: 2px solid ${props => props.theme.colors.black};
 
     label:nth-child(1) {
-      color: ${props => props.theme.colors.black};
+      color: ${props => props.theme.colors.white};
       cursor: pointer;
     }
   }

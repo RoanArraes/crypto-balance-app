@@ -1,5 +1,3 @@
-import React from 'react';
-
 import {
   Container,
   HeaderArea,
@@ -14,23 +12,26 @@ import {
   Header,
   Footer,
   BoxArea,
-  //Label,
   ButtonRounded,
   ButtonRoundedInfo,
   TablePortfolio,
   TableTransactions,
   ModalBase,
-  InputRounded
  } from '../../components';
 
 import { 
   LinksNavBarInterface,
-  HoldingInfoInterface
+  HoldingInfoInterface,
+  CreatePortfolioInterface
 } from '../../utils/interfaces';
 
 import {
   MockWalletHoldings
 } from '../../utils/mocks';
+
+import {
+  ModalCreatePortfolio
+} from './components/Modals';
 
 import { ROUTES } from '../../utils/constants/routes';
 import { LABELS, LABEL_BUTTONS } from '../../utils/constants/labels';
@@ -51,7 +52,7 @@ const WalletPortfolios: React.FC = (props: Props) => {
 
   const [selectedPortfolio, setSelectedPortfolio] = useState<HoldingInfoInterface | undefined | false >(false);
   const [isActiveModal, setIsActiveModal] = useState<null | boolean>(null);
-
+  const [form, setForm] = useState<CreatePortfolioInterface>({name: ""});
 
   const renderButtonPortfolio = (portfolio: HoldingInfoInterface[]) => {
     if(!portfolio || !portfolio.length) {
@@ -123,9 +124,18 @@ const WalletPortfolios: React.FC = (props: Props) => {
                 <TableTransactions transactions={selectedPortfolio.transactions}/>
               </GroupBoxArea.GroupTableHoldings>
               :
-              <GroupBoxArea.InfoMessage>
-                Nothing to show, register one transaction.
-              </GroupBoxArea.InfoMessage>
+              <Wrapper
+                flexDirection='column'
+              >
+                <GroupBoxArea.InfoMessage>
+                  Nothing to show, register one transaction.
+                </GroupBoxArea.InfoMessage>
+                <ButtonRounded
+                  type='button'
+                  label='Register transaction'
+                  maxWidth='400px'
+                />
+              </Wrapper>
             }
           </>
             :
@@ -138,43 +148,6 @@ const WalletPortfolios: React.FC = (props: Props) => {
     )
   }
 
-  const modalCreatePortfolio = () => {
-    return(
-      <Wrapper
-        flexDirection='column'
-        alignItems='flex-start'
-        justifyContent='center'
-        margin='10px'
-        maxWidth='600px'
-        flexWrap="wrap"
-      >
-        <Label
-          fontSize='micro'
-        >
-          Portfolio name
-        </Label>
-        <InputRounded 
-          placeholder="Insert portfolio name" 
-          type="text" 
-          maxWidth='593px'
-          width='100%'
-          margin="10px 0px"
-        />
-        <Label
-          fontSize='micro'
-        >
-          0/32 caracteres
-        </Label>
-        <ButtonRounded 
-          type='button' 
-          label='create'
-          maxWidth='600px'
-          marginTop='20px'
-        />
-      </Wrapper>
-    )
-  }
-
   const findSelectedPortfolio = (id: string) => {
     if (!id || id === "") {
       return null
@@ -184,6 +157,10 @@ const WalletPortfolios: React.FC = (props: Props) => {
 
     setSelectedPortfolio(item);
   }
+
+  const onSubmitForm = () => {
+
+  };
 
   return(
     <Container>
@@ -207,7 +184,12 @@ const WalletPortfolios: React.FC = (props: Props) => {
       <ModalBase 
         showModal={isActiveModal}
         onCloseModal={() => setIsActiveModal(false)}
-        children={modalCreatePortfolio()}
+        children={
+          <ModalCreatePortfolio
+            submitModalCreate={(e) => setForm({name: e.currentTarget.value})}
+            nameLength={form.name.length}
+          />
+        }
       />
     </Container>
   )

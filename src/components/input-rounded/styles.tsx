@@ -15,6 +15,12 @@ export const InputField = styled.input<Props>`
   font-family: ${props => props.theme.fonts[1]};
   display: flex;
   text-align: center;
-  background-color: ${props => props.theme.colors.rgba.whiteTransparency};
-  margin: ${props => props.margin ? props.margin : '0px'}
+  background-color: ${props => props.theme.colors.input.background};
+  margin: ${props => props.margin ? props.margin : '0px'};
+  color: ${props => props.theme.colors.white};
+
+  :focus {
+    background-color: ${props => props.theme.colors.input.backgroundHighlight};
+    outline-width: 0;
+}
 `;

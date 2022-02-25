@@ -39,7 +39,6 @@ export default function ModalBase({ showModal, children, onCloseModal }: Props) 
       <ModalArea>
         <HeaderArea>
           <Label
-            textUppercase
             fontSize='medium1'
           >
             Create portfolio
