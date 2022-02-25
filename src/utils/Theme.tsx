@@ -10,7 +10,7 @@ const theme = {
     white: "#FFFFFF",
     black: "#000000",
     rgba: {
-      whiteTransparency: "rgba(255,255,255,0.5)"
+      whiteTransparency: "rgba(255,255,255,0.3)"
     },
     header: {
       lightBlack: "rgba(0,0,0,0.5)",
@@ -37,12 +37,17 @@ const theme = {
   },
   fonts: ["sans-serif", "RussoOneRegular", "ZenKakuGothicAntiqueRegular"],
   fontSizes: {
-    micro: "0.7em",
+    micro: "0.9em",
     small: "1em",
     medium1: "1.2em",
     medium2: "1.6em",
     large: "2.5em",
-    extreme: "4em"
+    extreme: "4em",
+    buttonFonts: {
+      micro: "0.7em",
+      small: "1em",
+      medium: "1.2em",
+    }
   },
   shadows: {
     lightBlack0: "2px 2px 3px rgba(0,0,0,0.2)",
