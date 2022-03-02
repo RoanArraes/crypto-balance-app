@@ -9,6 +9,7 @@ type SalesTransactions = {
 }
 
 export interface TransactionsPortfolioInterface {
+  id: string,
   name: string,
   purchases: PurchasesTransactions[],
   sales: SalesTransactions[],
