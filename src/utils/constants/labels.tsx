@@ -3,7 +3,7 @@ export const LABELS = {
   TITLE_PROJECT: "Crypto Balance",
   PORTFOLIO_TABLE_TITLE: "Portfolio",
   PORTFOLIO_USER: "Your Portfolios",
-  TRANSACTIONS_TABLE_TITLE: "Transactions"
+  COINS_TABLE_TITLE: "Coins in portfolio"
 }
 
 export const LABEL_BUTTONS = {
