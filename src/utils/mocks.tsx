@@ -47,6 +47,7 @@ const MockWalletHoldings: HoldingInfoInterface[] = [
     action: 'Rebalance',
     transactions: [
       {
+        id: "1",
         name: "BNB",
         idealHold: "100",
         profit24hrs: "10",
@@ -75,6 +76,7 @@ const MockWalletHoldings: HoldingInfoInterface[] = [
         totalValue: "230"
       },
       {
+        id: "2",
         name: "ETH",
         idealHold: "100",
         profit24hrs: "10",
@@ -103,6 +105,7 @@ const MockWalletHoldings: HoldingInfoInterface[] = [
         totalValue: "230"
       },
       {
+        id: "3",
         name: "GALA",
         idealHold: "100",
         profit24hrs: "10",
@@ -131,6 +134,7 @@ const MockWalletHoldings: HoldingInfoInterface[] = [
         totalValue: "230"
       },
       {
+        id: "4",
         name: "ADA",
         idealHold: "100",
         profit24hrs: "10",
@@ -159,6 +163,7 @@ const MockWalletHoldings: HoldingInfoInterface[] = [
         totalValue: "230"
       },
       {
+        id: "5",
         name: "AXS",
         idealHold: "100",
         profit24hrs: "10",
@@ -198,6 +203,7 @@ const MockWalletHoldings: HoldingInfoInterface[] = [
     action: 'Rebalance',
     transactions: [
       {
+        id: "1",
         name: "BNB",
         idealHold: "100",
         profit24hrs: "10",
@@ -237,6 +243,7 @@ const MockWalletHoldings: HoldingInfoInterface[] = [
     action: 'Rebalance',
     transactions: [
       {
+        id: "1",
         name: "BNB",
         idealHold: "100",
         profit24hrs: "10",
@@ -276,6 +283,7 @@ const MockWalletHoldings: HoldingInfoInterface[] = [
     action: 'Rebalance',
     transactions: [
       {
+        id: "1",
         name: "BNB",
         idealHold: "100",
         profit24hrs: "10",
@@ -304,6 +312,7 @@ const MockWalletHoldings: HoldingInfoInterface[] = [
         totalValue: "230"
       },
       {
+        id: "2",
         name: "ETH",
         idealHold: "100",
         profit24hrs: "10",
@@ -332,6 +341,7 @@ const MockWalletHoldings: HoldingInfoInterface[] = [
         totalValue: "230"
       },
       {
+        id: "3",
         name: "GALA",
         idealHold: "100",
         profit24hrs: "10",
@@ -360,6 +370,7 @@ const MockWalletHoldings: HoldingInfoInterface[] = [
         totalValue: "230"
       },
       {
+        id: "4",
         name: "ADA",
         idealHold: "100",
         profit24hrs: "10",
@@ -388,6 +399,7 @@ const MockWalletHoldings: HoldingInfoInterface[] = [
         totalValue: "230"
       },
       {
+        id: "5",
         name: "AXS",
         idealHold: "100",
         profit24hrs: "10",
@@ -416,6 +428,7 @@ const MockWalletHoldings: HoldingInfoInterface[] = [
         totalValue: "230"
       },
       {
+        id: "1",
         name: "BNB",
         idealHold: "100",
         profit24hrs: "10",
@@ -444,6 +457,7 @@ const MockWalletHoldings: HoldingInfoInterface[] = [
         totalValue: "230"
       },
       {
+        id: "2",
         name: "ETH",
         idealHold: "100",
         profit24hrs: "10",
@@ -472,6 +486,7 @@ const MockWalletHoldings: HoldingInfoInterface[] = [
         totalValue: "230"
       },
       {
+        id: "3",
         name: "GALA",
         idealHold: "100",
         profit24hrs: "10",
@@ -500,6 +515,7 @@ const MockWalletHoldings: HoldingInfoInterface[] = [
         totalValue: "230"
       },
       {
+        id: "4",
         name: "ADA",
         idealHold: "100",
         profit24hrs: "10",
@@ -528,6 +544,7 @@ const MockWalletHoldings: HoldingInfoInterface[] = [
         totalValue: "230"
       },
       {
+        id: "5",
         name: "AXS",
         idealHold: "100",
         profit24hrs: "10",
