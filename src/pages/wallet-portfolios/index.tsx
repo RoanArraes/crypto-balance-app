@@ -206,6 +206,7 @@ const WalletPortfolios: React.FC = (props: Props) => {
         <Footer label={LABELS.POWERED_BY} />
       </FooterArea>
       <ModalBase 
+        labelTitle="Create Portfolio"
         showModal={isActiveModal}
         onCloseModal={() => setIsActiveModal(false)}
         children={
@@ -216,7 +217,7 @@ const WalletPortfolios: React.FC = (props: Props) => {
         }
       />
       <ModalBase 
-        labelTitle='Register coin'
+        labelTitle='Register Coin'
         showModal={isActiveModalCreateCoin}
         onCloseModal={() => setIsActiveModalCreateCoin(false)}
         children={
