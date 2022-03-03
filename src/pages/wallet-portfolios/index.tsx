@@ -120,11 +120,7 @@ const WalletPortfolios: React.FC = (props: Props) => {
             <GroupBoxArea.GroupTableHoldings>
               <TablePortfolio portfolio={[selectedPortfolio]}/>
             </GroupBoxArea.GroupTableHoldings>
-            <Label
-              textUppercase
-            >
-              {LABELS.COINS_TABLE_TITLE}
-            </Label>
+
             {selectedPortfolio && selectedPortfolio.transactions.length ?
               <GroupBoxArea.GroupTableHoldings>
                 <TableCoins
