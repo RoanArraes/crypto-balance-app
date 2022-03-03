@@ -78,15 +78,6 @@ export const GroupBoxArea = {
   `,
   GroupTableHoldings: styled.div`
     width: calc(100% - 40px);
-    margin: 20px 0px 40px 0px;
-    border: 1px solid transparent;
-    border-radius: 10px;
-    overflow: hidden;
-    border: 1px solid black;
-    
-    table {
-      width: 100%;
-    }
   `,
 }
 

@@ -1,14 +1,23 @@
 type PurchasesTransactions = {
+  id: string,
   value: string,
   date: string
+  amount: string,
+  price: string,
+  fee: string
 }
 
 type SalesTransactions = {
+  id: string,
   value: string,
   date: string
+  amount: string,
+  price: string,
+  fee: string
 }
 
 export interface TransactionsPortfolioInterface {
+  id: string,
   name: string,
   purchases: PurchasesTransactions[],
   sales: SalesTransactions[],

@@ -15,6 +15,7 @@ import {
   ButtonRounded,
   ButtonRoundedInfo,
   TablePortfolio,
+  TableCoins,
   TableTransactions,
   ModalBase,
  } from '../../components';
@@ -22,7 +23,8 @@ import {
 import { 
   LinksNavBarInterface,
   HoldingInfoInterface,
-  CreatePortfolioInterface
+  CreatePortfolioInterface,
+  TransactionsPortfolioInterface
 } from '../../utils/interfaces';
 
 import {
@@ -36,7 +38,7 @@ import {
 
 import { ROUTES } from '../../utils/constants/routes';
 import { LABELS, LABEL_BUTTONS } from '../../utils/constants/labels';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
  type Props = {
 
@@ -52,9 +54,16 @@ const portfolio = MockWalletHoldings;
 const WalletPortfolios: React.FC = (props: Props) => {
 
   const [selectedPortfolio, setSelectedPortfolio] = useState<HoldingInfoInterface | undefined | false >(false);
+  const [selectedTransaction, setSelectedTransaction] = useState<string | false>(false);
   const [isActiveModal, setIsActiveModal] = useState<null | boolean>(null);
   const [isActiveModalCreateCoin, setIsActiveModalCreateCoin] = useState<null | boolean>(null);
   const [form, setForm] = useState<CreatePortfolioInterface>({name: ""});
+
+  useEffect(() => {
+    if(selectedPortfolio) {
+      setSelectedTransaction(false);
+    }
+  }, [selectedPortfolio]);
 
   const renderButtonPortfolio = (portfolio: HoldingInfoInterface[]) => {
     if(!portfolio || !portfolio.length) {
@@ -106,24 +115,27 @@ const WalletPortfolios: React.FC = (props: Props) => {
   const AreaRight = () => {
     return(
       <GroupBoxArea.Right>
-        <Label
-          textUppercase
-        >
-          {LABELS.PORTFOLIO_TABLE_TITLE + `${selectedPortfolio ? ' - '+ selectedPortfolio.name : ""}`}
-        </Label> 
-          {selectedPortfolio ?
-          <>
+      {selectedPortfolio && !selectedTransaction ?
+        <>
+          <Label
+            textUppercase
+          >
+            {LABELS.PORTFOLIO_TABLE_TITLE + `${selectedPortfolio ? ' - '+ selectedPortfolio.name : ""}`}
+          </Label>
             <GroupBoxArea.GroupTableHoldings>
               <TablePortfolio portfolio={[selectedPortfolio]}/>
             </GroupBoxArea.GroupTableHoldings>
             <Label
               textUppercase
             >
-              {LABELS.TRANSACTIONS_TABLE_TITLE}
+              {LABELS.COINS_TABLE_TITLE}
             </Label>
             {selectedPortfolio && selectedPortfolio.transactions.length ?
               <GroupBoxArea.GroupTableHoldings>
-                <TableTransactions transactions={selectedPortfolio.transactions}/>
+                <TableCoins
+                  transactions={selectedPortfolio.transactions}
+                  onClickTransaction={(id) => setSelectedTransaction(id)}
+                />
               </GroupBoxArea.GroupTableHoldings>
               :
               <Wrapper
@@ -141,10 +153,16 @@ const WalletPortfolios: React.FC = (props: Props) => {
               </Wrapper>
             }
           </>
-            :
-            <GroupBoxArea.InfoMessage>
-              Create or select your Portfolio.
-            </GroupBoxArea.InfoMessage>
+            : (selectedTransaction && selectedPortfolio) ?
+              <GroupBoxArea.GroupTableHoldings>
+                <TableTransactions
+                  transaction={findTransaction(selectedTransaction)}
+                />
+              </GroupBoxArea.GroupTableHoldings>
+            : (!selectedPortfolio && !selectedTransaction) &&
+              <GroupBoxArea.InfoMessage>
+                Create or select your Portfolio.
+              </GroupBoxArea.InfoMessage>
           }
 
       </GroupBoxArea.Right>
@@ -159,6 +177,18 @@ const WalletPortfolios: React.FC = (props: Props) => {
     const item = portfolio.find(p => p.id === id);
 
     setSelectedPortfolio(item);
+  }
+
+  function findTransaction(id: string): TransactionsPortfolioInterface | null {
+    let item = null;
+    
+    selectedPortfolio && selectedPortfolio['transactions'].map(t => {
+      if(t.id === id) {
+        item = t;
+      }
+      return null
+    });
+    return item;
   }
 
   const onSubmitForm = () => {

@@ -8,11 +8,12 @@ import BoxArea from "./box-area/BoxArea";
 import Label from "./label/Label";
 import ButtonRoundedInfo from "./button-rounded-info/ButtonRoundedInfo";
 import TablePortfolio from "./table-portfolio/TablePortfolio";
-import TableTransactions from "./table-transactions/TableTransactions";
+import TableCoins from "./table-coins";
 import ModalBase from "./modal-base/ModalBase";
 import ButtonTypes from './button-types/ButtonTypes';
 import SelectRounded from "./select-rounded/SelectRounded";
 import ListWithSearch from "./list-with-search/ListWithSearch";
+import TableTransactions from "./table-transactions";
 
 export {
   InputRounded,
@@ -25,9 +26,10 @@ export {
   Label,
   ButtonRoundedInfo,
   TablePortfolio,
-  TableTransactions,
+  TableCoins,
   ModalBase,
   ButtonTypes,
   ListWithSearch,
-  SelectRounded
+  SelectRounded,
+  TableTransactions
 };
