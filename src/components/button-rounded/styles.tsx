@@ -3,6 +3,7 @@ import styled from 'styled-components';
 interface Props {
   maxWidth?: string;
   marginTop?: string;
+  colorButton?: string;
 }
 
 export const Label = styled.label`
@@ -19,7 +20,7 @@ export const Button = styled.button<Props>`
   margin-top: ${props => props.marginTop ? props.marginTop : '0px'};
   border: 1px solid transparent;
   border-radius: 10px;
-  background-color: ${props => props.theme.colors.button.buttonAdd};
+  background-color: ${props => props.colorButton ? props.theme.colors.button[props.colorButton] : props.theme.colors.button.buttonAdd};
   box-shadow: ${props => props.theme.shadows.lightBlack};
   cursor: pointer;
 
