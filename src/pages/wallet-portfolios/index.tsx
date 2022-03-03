@@ -146,6 +146,26 @@ const WalletPortfolios: React.FC = (props: Props) => {
           </>
           : (selectedTransaction && selectedPortfolio) ?
             <GroupBoxArea.GroupTableHoldings>
+              <Wrapper
+                maxWidth='calc(100% - 20px)'
+                display='flex'
+                alignItems='center'
+                justifyContent='space-between'
+                margin='0px 10px 20px 10px'
+              >
+                <ButtonRounded 
+                  type='button'
+                  label='back'
+                  maxWidth='100px'
+                  colorButton='buttonBack'
+                  onClick={() => setSelectedTransaction(false)}
+                />
+                <ButtonRounded 
+                  type='button'
+                  label='add transaction'
+                  maxWidth='200px'
+                />
+              </Wrapper>
               <TableTransactions
                 transaction={findTransaction(selectedTransaction)}
               />
