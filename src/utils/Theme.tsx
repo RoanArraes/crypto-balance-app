@@ -30,6 +30,7 @@ const theme = {
       buttonHighligth: "#1ECBE1",
       hoverButton: "#30323F",
       clickButton: "#30323F",
+      buttonBack: "rgba(255,255,255,0.3)"
     },
     input: {
       background: "#30323F",
