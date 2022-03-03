@@ -117,53 +117,48 @@ const WalletPortfolios: React.FC = (props: Props) => {
       <GroupBoxArea.Right>
       {selectedPortfolio && !selectedTransaction ?
         <>
+          <GroupBoxArea.GroupTableHoldings>
+            <TablePortfolio portfolio={[selectedPortfolio]}/>
+          </GroupBoxArea.GroupTableHoldings>
           <Label
             textUppercase
           >
-            {LABELS.PORTFOLIO_TABLE_TITLE + `${selectedPortfolio ? ' - '+ selectedPortfolio.name : ""}`}
+            {LABELS.COINS_TABLE_TITLE}
           </Label>
+          {selectedPortfolio && selectedPortfolio.transactions.length ?
             <GroupBoxArea.GroupTableHoldings>
-              <TablePortfolio portfolio={[selectedPortfolio]}/>
+              <TableCoins
+                transactions={selectedPortfolio.transactions}
+                onClickTransaction={(id) => setSelectedTransaction(id)}
+              />
             </GroupBoxArea.GroupTableHoldings>
-            <Label
-              textUppercase
+            :
+            <Wrapper
+              flexDirection='column'
             >
-              {LABELS.COINS_TABLE_TITLE}
-            </Label>
-            {selectedPortfolio && selectedPortfolio.transactions.length ?
-              <GroupBoxArea.GroupTableHoldings>
-                <TableCoins
-                  transactions={selectedPortfolio.transactions}
-                  onClickTransaction={(id) => setSelectedTransaction(id)}
-                />
-              </GroupBoxArea.GroupTableHoldings>
-              :
-              <Wrapper
-                flexDirection='column'
-              >
-                <GroupBoxArea.InfoMessage>
-                  Nothing to show, first register one coin.
-                </GroupBoxArea.InfoMessage>
-                <ButtonRounded
-                  type='button'
-                  label='Register coin'
-                  maxWidth='400px'
-                  onClick={() => setIsActiveModalCreateCoin(true)}
-                />
-              </Wrapper>
-            }
-          </>
-            : (selectedTransaction && selectedPortfolio) ?
-              <GroupBoxArea.GroupTableHoldings>
-                <TableTransactions
-                  transaction={findTransaction(selectedTransaction)}
-                />
-              </GroupBoxArea.GroupTableHoldings>
-            : (!selectedPortfolio && !selectedTransaction) &&
               <GroupBoxArea.InfoMessage>
-                Create or select your Portfolio.
+                Nothing to show, first register one coin.
               </GroupBoxArea.InfoMessage>
+              <ButtonRounded
+                type='button'
+                label='Register coin'
+                maxWidth='400px'
+                onClick={() => setIsActiveModalCreateCoin(true)}
+              />
+            </Wrapper>
           }
+        </>
+        : (selectedTransaction && selectedPortfolio) ?
+          <GroupBoxArea.GroupTableHoldings>
+            <TableTransactions
+              transaction={findTransaction(selectedTransaction)}
+            />
+          </GroupBoxArea.GroupTableHoldings>
+        : (!selectedPortfolio && !selectedTransaction) &&
+          <GroupBoxArea.InfoMessage>
+            Create or select your Portfolio.
+          </GroupBoxArea.InfoMessage>
+      }
 
       </GroupBoxArea.Right>
     )
