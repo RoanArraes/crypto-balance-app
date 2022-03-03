@@ -1,8 +1,17 @@
 import styled from "styled-components";
+import { PageItemWrapper } from "../../helpers/ItemWrapper";
+import { PageText } from "../../helpers/PageText";
+
+export const TableWrapper = styled(PageItemWrapper)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
 export const TableArea = styled.table`
   width: 100%;
   border-collapse: collapse;
+  margin: 0px 0px 40px 0px;
 
   thead {
     tr {
@@ -24,14 +33,8 @@ export const TableArea = styled.table`
     tr {
       border-bottom: 1px solid #30323F;
       color: ${props => props.theme.colors.white};
-
-      &:last-child {
-        border-bottom: none;
-      }
     }
   }
-
-
 
   td {
     font-family: ${props => props.theme.fonts[2]};
@@ -47,4 +50,13 @@ export const TableArea = styled.table`
       cursor: pointer;
     }
   }
+`;
+
+export const Label = styled(PageText)`
+  font-family: ${props => props.theme.fonts[1]};
+  font-size: ${props => props.fontSize ? props.theme.fontSizes[props.fontSize] : props.theme.fontSizes.medium1};
+  color: ${props => props.color ? props.color : props.theme.colors.white};
+  text-shadow: ${props => props.textShadow ? props.theme.shadows.lightWhite0 : "none"};
+  text-transform: ${props => props.textUppercase ? "uppercase" : "none"};
+  margin-bottom: 20px;
 `;
