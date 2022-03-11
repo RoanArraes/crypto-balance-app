@@ -8,7 +8,8 @@ import {
 
 import {
   ListWithSearch,
-  SelectRounded
+  SelectRounded,
+  ModalBase
 } from '../';
 
 import { OPTIONS_ADD_TRANSACTIONS } from '../../utils/constants/select-options';
@@ -42,9 +43,15 @@ const initialSelectedCoin: ListCoinsInterface = {
 
 type ModalProps = {
   coin?: string;
+  isActiveModal: boolean,
+  onCloseModal: () => void
 }
 
-export default function ModalAddTransaction({ coin }: ModalProps) {
+export default function ModalAddTransaction({ 
+  coin,
+  isActiveModal,
+  onCloseModal 
+}: ModalProps) {
 
   const [selectedCoin, setSelectedCoin] = useState<ListCoinsInterface>(initialSelectedCoin);
   const [form, setForm] = useState(initialFormState);
@@ -61,50 +68,57 @@ export default function ModalAddTransaction({ coin }: ModalProps) {
   }
 
   return(
-    <Container>
-      {!coin && (selectedCoin && selectedCoin.id === "") ?
-        <Wrapper
-          flexDirection='column'
-          alignItems='flex-start'
-          maxWidth='500px'
-          flexWrap="wrap"
-        >
-          <Label
-            fontSize='micro'
-          >
-            Search coin
-          </Label>
-          <ListWithSearch
-            maxHeight="400px"
-            onClickItem={(coin) => setSelectedCoin(coin)}
-          />
-        </Wrapper>
-      : (coin || (selectedCoin && selectedCoin.id !== "")) &&
-        <Wrapper
-          flexDirection='column'
-          alignItems='flex-start'
-          maxWidth='500px'
-          flexWrap="wrap"
-        >
-          <Label fontSize='medium1'>{selectedCoin.name} - {selectedCoin.projectInitials}</Label>
-          <Label fontSize='micro'>Type</Label>
-          <SelectRounded 
-            options={OPTIONS_ADD_TRANSACTIONS}
-            width={'100%'}
-            maxWidth={'500px'}
-            onChange={(e)=> setForm({...form, type: e.currentTarget.value})}
-          />
-          {(form.type === 'buy' || form.type === 'sell') ?
-              <FormBuyAndSell 
-                onSubmitForm={(formBuyAndSell) => submitForm(formBuyAndSell)}
+    <ModalBase 
+      labelTitle="Create Portfolio"
+      showModal={isActiveModal}
+      onCloseModal={onCloseModal}
+      children={
+        <Container>
+          {!coin && (selectedCoin && selectedCoin.id === "") ?
+            <Wrapper
+              flexDirection='column'
+              alignItems='flex-start'
+              maxWidth='500px'
+              flexWrap="wrap"
+            >
+              <Label
+                fontSize='micro'
+              >
+                Search coin
+              </Label>
+              <ListWithSearch
+                maxHeight="400px"
+                onClickItem={(coin) => setSelectedCoin(coin)}
               />
-            :
-              <FormTransferInOut 
-                onSubmitForm={(formTransferInOut) => submitForm(formTransferInOut)}
+            </Wrapper>
+          : (coin || (selectedCoin && selectedCoin.id !== "")) &&
+            <Wrapper
+              flexDirection='column'
+              alignItems='flex-start'
+              maxWidth='500px'
+              flexWrap="wrap"
+            >
+              <Label fontSize='medium1'>{selectedCoin.name} - {selectedCoin.projectInitials}</Label>
+              <Label fontSize='micro'>Type</Label>
+              <SelectRounded 
+                options={OPTIONS_ADD_TRANSACTIONS}
+                width={'100%'}
+                maxWidth={'500px'}
+                onChange={(e)=> setForm({...form, type: e.currentTarget.value})}
               />
+              {(form.type === 'buy' || form.type === 'sell') ?
+                  <FormBuyAndSell 
+                    onSubmitForm={(formBuyAndSell) => submitForm(formBuyAndSell)}
+                  />
+                :
+                  <FormTransferInOut 
+                    onSubmitForm={(formTransferInOut) => submitForm(formTransferInOut)}
+                  />
+              }
+            </Wrapper>
           }
-        </Wrapper>
+        </Container>
       }
-    </Container>
+    />
   )
 };

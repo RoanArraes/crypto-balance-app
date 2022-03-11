@@ -17,7 +17,6 @@ import {
   TablePortfolio,
   TableCoins,
   TableTransactions,
-  ModalBase,
   ModalAddTransaction,
   ModalCreatePortfolio
  } from '../../components';
@@ -53,7 +52,7 @@ const WalletPortfolios: React.FC = (props: Props) => {
   const [selectedPortfolio, setSelectedPortfolio] = useState<HoldingInfoInterface | undefined | false >(false);
   const [selectedTransaction, setSelectedTransaction] = useState<string | false>(false);
   const [isActiveModalCreatePortfolio, setIsActiveModalCreatePortfolio] = useState<boolean>(false);
-  const [isActiveModalCreateCoin, setIsActiveModalCreateCoin] = useState<null | boolean>(null);
+  const [isActiveModalCreateCoin, setIsActiveModalCreateCoin] = useState<boolean>(false);
   const [form, setForm] = useState<CreatePortfolioInterface>({name: ""});
 
   useEffect(() => {
@@ -199,10 +198,6 @@ const WalletPortfolios: React.FC = (props: Props) => {
     return item;
   }
 
-  const onSubmitForm = () => {
-
-  };
-
   return(
     <Container>
       <HeaderArea>
@@ -227,17 +222,9 @@ const WalletPortfolios: React.FC = (props: Props) => {
         onCloseModal={() => setIsActiveModalCreatePortfolio(false)}
         isActiveModal={isActiveModalCreatePortfolio}
       />
-      <ModalBase 
-        labelTitle='Register Coin'
-        showModal={isActiveModalCreateCoin}
+      <ModalAddTransaction 
+        isActiveModal={isActiveModalCreateCoin}
         onCloseModal={() => setIsActiveModalCreateCoin(false)}
-        children={
-          // <ModalCreateCoin
-          //   submitModalCreate={(e) => setForm({name: e.currentTarget.value})}
-          //   nameLength={form.name.length}
-          // />
-          <ModalAddTransaction />
-        }
       />
     </Container>
   )
