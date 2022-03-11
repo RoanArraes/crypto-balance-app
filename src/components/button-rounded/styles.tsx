@@ -6,7 +6,7 @@ interface Props {
   colorButton?: string;
 }
 
-export const Label = styled.label`
+export const Label = styled.span`
   font-family: ${props => props.theme.fonts[1]};
   font-size: ${props => props.theme.fontSizes.medium};
   color: ${props => props.theme.colors.black};
@@ -15,7 +15,7 @@ export const Label = styled.label`
 
 export const Button = styled.button<Props>`
   width: 100%;
-  max-width: ${props => props.maxWidth ? props.maxWidth : '200px'};
+  max-width: ${props => props.maxWidth ? props.maxWidth : '500px'};
   height: 60px;
   margin-top: ${props => props.marginTop ? props.marginTop : '0px'};
   border: 1px solid transparent;
@@ -27,7 +27,7 @@ export const Button = styled.button<Props>`
   :hover {
     border: 2px solid ${props => props.theme.colors.black};
 
-    label:nth-child(1) {
+    span:nth-child(1) {
       color: ${props => props.theme.colors.white};
       cursor: pointer;
     }

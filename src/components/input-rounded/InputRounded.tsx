@@ -10,7 +10,11 @@ type Props = {
   maxWidth?: string;
   margin?: string;
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
-  maxLength?: number
+  maxLength?: number;
+  name?: string,
+  autoComplete?: string;
+  readOnly?: boolean;
+  value?: string;
 };
 
 function InputRounded({
@@ -19,7 +23,11 @@ function InputRounded({
   margin,
   maxWidth,
   onChange,
-  maxLength
+  maxLength,
+  name,
+  autoComplete,
+  readOnly,
+  value
 }: Props) {
   return (
     <InputField
@@ -29,6 +37,10 @@ function InputRounded({
       maxWidth={maxWidth}
       onChange={onChange}
       maxLength={maxLength}
+      name={name}
+      autoComplete={autoComplete}
+      readOnly={readOnly}
+      value={value}
     />
   )
 }

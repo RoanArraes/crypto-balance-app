@@ -4,6 +4,7 @@ interface Props {
   width?: string;
   maxWidth?: string;
   margin?: string;
+  textOptionsUpperCase: boolean | undefined;
 }
 
 export const Select = styled.select<Props>`
@@ -14,5 +15,7 @@ export const Select = styled.select<Props>`
   color: ${props => props.theme.colors.white};
   font-family: ${props => props.theme.fonts[2]};
   font-size: ${props => props.theme.fontSizes.small};
+  text-transform: ${props => props.textOptionsUpperCase ? 'uppercase' : 'none'};
+  border-radius: 5px;
   padding: 10px;
 `;

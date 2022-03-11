@@ -1,28 +1,30 @@
-import {HoldingInfoInterface} from '../utils/interfaces'
+import {ListCoinsInterface, HoldingInfoInterface} from '../utils/interfaces'
 
-const MockListCoins: {
-  name: string,
-  id: string
-}[] = [
+const MockListCoins: ListCoinsInterface[] = [
   {
     id: "12",
-    name: "bnb"
+    name: "BNB",
+    projectInitials: "BNB"
   },
   {
     id: "13",
-    name: "eth"
+    name: "Ethereum",
+    projectInitials: "ETH"
   },
   {
     id: "14",
-    name: "gala"
+    name: "Gala",
+    projectInitials: "GALA"
   },
   {
     id: "15",
-    name: "axs"
+    name: "Axie Infinity",
+    projectInitials: "AXS"
   },
   {
     id: "16",
-    name: "brise"
+    name: "Bitgert",
+    projectInitials: "BRISE"
   }
 ]
 

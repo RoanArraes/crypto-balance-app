@@ -14,6 +14,8 @@ import ButtonTypes from './button-types/ButtonTypes';
 import SelectRounded from "./select-rounded/SelectRounded";
 import ListWithSearch from "./list-with-search/ListWithSearch";
 import TableTransactions from "./table-transactions/TableTransactions";
+import ModalAddTransaction from "./modal-add-transaction/ModalAddTransaction"
+import FormInputs from "./form-inputs/FormInputs";
 
 export {
   InputRounded,
@@ -31,5 +33,7 @@ export {
   ButtonTypes,
   ListWithSearch,
   SelectRounded,
-  TableTransactions
+  TableTransactions,
+  ModalAddTransaction,
+  FormInputs
 };

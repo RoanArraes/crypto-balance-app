@@ -1,3 +1,9 @@
+export interface ListCoinsInterface {
+  name: string,
+  id: string,
+  projectInitials: string,
+};
+
 type PurchasesTransactions = {
   id: string,
   value: string,

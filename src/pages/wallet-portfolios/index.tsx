@@ -18,6 +18,7 @@ import {
   TableCoins,
   TableTransactions,
   ModalBase,
+  ModalAddTransaction,
  } from '../../components';
 
 import { 
@@ -32,7 +33,6 @@ import {
 } from '../../utils/mocks';
 
 import {
-  ModalCreateCoin,
   ModalCreatePortfolio
 } from './components/Modals';
 
@@ -241,10 +241,11 @@ const WalletPortfolios: React.FC = (props: Props) => {
         showModal={isActiveModalCreateCoin}
         onCloseModal={() => setIsActiveModalCreateCoin(false)}
         children={
-          <ModalCreateCoin
-            submitModalCreate={(e) => setForm({name: e.currentTarget.value})}
-            nameLength={form.name.length}
-          />
+          // <ModalCreateCoin
+          //   submitModalCreate={(e) => setForm({name: e.currentTarget.value})}
+          //   nameLength={form.name.length}
+          // />
+          <ModalAddTransaction />
         }
       />
     </Container>

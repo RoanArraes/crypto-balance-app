@@ -55,7 +55,10 @@ export default function ModalBase({ showModal, children, labelTitle, onCloseModa
           maxWidth='600px'
           flexDirection='column'
         >
-          {children}
+          {isActive &&
+            children
+          }
+
         </BodyArea>
       </ModalArea>
     </Container>

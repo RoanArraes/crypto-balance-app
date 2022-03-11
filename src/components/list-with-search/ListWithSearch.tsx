@@ -8,14 +8,20 @@ import {
 } from '../../components';
 
 import { MockListCoins } from '../../utils/mocks';
+import { ListCoinsInterface } from '../../utils/interfaces';
 
 const listMock = MockListCoins;
 
 interface Props {
-  maxHeight?: string; 
+  maxHeight?: string;
+  onClickItem: (item: ListCoinsInterface) => void
 }
 
-export default function ListWithSearch({ maxHeight }: Props) {
+export default function ListWithSearch({ 
+  maxHeight,
+  onClickItem
+}: Props) {
+
   return(
     <WrapperList>
       <InputRoundedSearch
@@ -29,15 +35,17 @@ export default function ListWithSearch({ maxHeight }: Props) {
         maxHeight={maxHeight}
       >
         {listMock && listMock.length ?
-            listMock.map(l => {
+            listMock.map(item => {
               return(
-                <ListItems.Item key={l.id}>
+                <ListItems.Item 
+                  key={item.id}
+                  onClick={() => onClickItem(item)}
+                >
                   <ListItems.ImageItem />
                   <ListItems.Label 
-                    textUppercase 
                     className='label-list-search'
                   >
-                      {l.name}
+                      {item.name} - {item.projectInitials}
                   </ListItems.Label>
                 </ListItems.Item>
               )

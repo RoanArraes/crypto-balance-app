@@ -30,7 +30,9 @@ export function ButtonRounded({
       marginTop={marginTop}
       colorButton={colorButton}
     >
-      <Label>{label}</Label>
+      <Label>
+        {label}
+      </Label>
     </Button>
   )
 }

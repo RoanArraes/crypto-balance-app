@@ -7,7 +7,9 @@ interface Props{
   maxWidth?: string;
   margin?: string;
   showInList?: number;
+  textOptionsUpperCase?: boolean;
   options: {
+    id: string,
     name: string,
     value: string
   }[];
@@ -20,6 +22,7 @@ export const SelectItem: React.FC<Props> = ({
   maxWidth,
   margin,
   showInList,
+  textOptionsUpperCase,
   onChange
 }) => {
   return( 
@@ -29,12 +32,16 @@ export const SelectItem: React.FC<Props> = ({
       margin={margin}
       size={showInList}
       onChange={onChange}
+      textOptionsUpperCase={textOptionsUpperCase}
     >
       {
         options.length > 0 &&
         options.map(op => {
           return(
-            <option value={op.value}>
+            <option
+              key={op.id}
+              value={op.value}
+            >
               {op.name}
             </option>
           )
