@@ -1,5 +1,3 @@
-import React, { useEffect, useState } from 'react';
-
 import 
 {
   Container,
@@ -16,33 +14,27 @@ import {
 interface Props {
   labelTitle?: string,
   children: React.ReactNode,
-  showModal: boolean | null,
   onCloseModal: () => void
 };
 
-export default function ModalBase({ showModal, children, labelTitle, onCloseModal }: Props) {
-
-  const[ isActive, setIsActive ] = useState(false);
-
-  useEffect(() => {
-    if(showModal !== null) {
-      setIsActive(showModal);
-    }
-  }, [showModal])
-
+export default function ModalBase({ 
+  children, 
+  labelTitle, 
+  onCloseModal 
+}: Props) {
+  
   const closeModal = () => {
     onCloseModal();
-    setIsActive(false);
   }
 
   return(
-    <Container showModal={isActive}>
+    <Container>
       <ModalArea>
         <HeaderArea>
           <Label
             fontSize='medium1'
           >
-            {labelTitle}
+            { labelTitle }
           </Label>
           <ButtonTypes
             typeButton="remove"
@@ -55,10 +47,7 @@ export default function ModalBase({ showModal, children, labelTitle, onCloseModa
           maxWidth='600px'
           flexDirection='column'
         >
-          {isActive &&
-            children
-          }
-
+          { children }
         </BodyArea>
       </ModalArea>
     </Container>

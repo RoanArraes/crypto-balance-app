@@ -43,13 +43,11 @@ const initialSelectedCoin: ListCoinsInterface = {
 
 type ModalProps = {
   coin?: string;
-  isActiveModal: boolean,
   onCloseModal: () => void
 }
 
 export default function ModalAddTransaction({ 
   coin,
-  isActiveModal,
   onCloseModal 
 }: ModalProps) {
 
@@ -70,7 +68,6 @@ export default function ModalAddTransaction({
   return(
     <ModalBase 
       labelTitle="Create Portfolio"
-      showModal={isActiveModal}
       onCloseModal={onCloseModal}
       children={
         <Container>

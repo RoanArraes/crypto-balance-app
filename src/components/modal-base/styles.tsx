@@ -9,7 +9,7 @@ interface Props {
 export const Container = styled.div<Props>`
   width: 100%;
   height: 100%;
-  display: ${props => props.showModal ? 'flex' : 'none' };
+  display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -35,7 +35,7 @@ export const HeaderArea = styled.div`
 
 export const BodyArea = styled(PageItemWrapper)`
   width: 100%;
-  display: ${props => props.display ? props.display : "flex"};
+  display: flex;
   flex-direction: ${props => props.flexDirection ? props.flexDirection : "row"};
   align-items: ${props => props.alignItems ? props.alignItems : "center"};
   max-width: ${props => props.maxWidth ? props.maxWidth : "500px"};

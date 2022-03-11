@@ -67,7 +67,7 @@ export default function ModalCreatePortfolio({
   return(
     <ModalBase 
     labelTitle="Create Portfolio"
-    showModal={isActiveModal}
+    //showModal={isActiveModal}
     onCloseModal={onCloseModal}
     children={
       <GroupForm

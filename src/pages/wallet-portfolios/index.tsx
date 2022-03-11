@@ -222,10 +222,12 @@ const WalletPortfolios: React.FC = (props: Props) => {
         onCloseModal={() => setIsActiveModalCreatePortfolio(false)}
         isActiveModal={isActiveModalCreatePortfolio}
       />
-      <ModalAddTransaction 
-        isActiveModal={isActiveModalCreateCoin}
-        onCloseModal={() => setIsActiveModalCreateCoin(false)}
-      />
+      {isActiveModalCreateCoin &&
+        <ModalAddTransaction 
+          onCloseModal={() => setIsActiveModalCreateCoin(false)}
+        />
+      }
+
     </Container>
   )
 };
