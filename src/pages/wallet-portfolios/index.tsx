@@ -19,6 +19,7 @@ import {
   TableTransactions,
   ModalBase,
   ModalAddTransaction,
+  ModalCreatePortfolio
  } from '../../components';
 
 import { 
@@ -31,10 +32,6 @@ import {
 import {
   MockWalletHoldings
 } from '../../utils/mocks';
-
-import {
-  ModalCreatePortfolio
-} from './components/Modals';
 
 import { ROUTES } from '../../utils/constants/routes';
 import { LABELS, LABEL_BUTTONS } from '../../utils/constants/labels';
@@ -55,7 +52,7 @@ const WalletPortfolios: React.FC = (props: Props) => {
 
   const [selectedPortfolio, setSelectedPortfolio] = useState<HoldingInfoInterface | undefined | false >(false);
   const [selectedTransaction, setSelectedTransaction] = useState<string | false>(false);
-  const [isActiveModal, setIsActiveModal] = useState<null | boolean>(null);
+  const [isActiveModalCreatePortfolio, setIsActiveModalCreatePortfolio] = useState<boolean>(false);
   const [isActiveModalCreateCoin, setIsActiveModalCreateCoin] = useState<null | boolean>(null);
   const [form, setForm] = useState<CreatePortfolioInterface>({name: ""});
 
@@ -105,7 +102,7 @@ const WalletPortfolios: React.FC = (props: Props) => {
           <ButtonRounded 
             label={LABEL_BUTTONS.CREATE_PORTFOLIO} 
             type="button" 
-            onClick={() => setIsActiveModal(true)}
+            onClick={() => setIsActiveModalCreatePortfolio(true)}
           />
         </GroupBoxArea.GroupButtonAdd>
       </GroupBoxArea.Left>
@@ -225,16 +222,10 @@ const WalletPortfolios: React.FC = (props: Props) => {
       <FooterArea>
         <Footer label={LABELS.POWERED_BY} />
       </FooterArea>
-      <ModalBase 
-        labelTitle="Create Portfolio"
-        showModal={isActiveModal}
-        onCloseModal={() => setIsActiveModal(false)}
-        children={
-          <ModalCreatePortfolio
-            submitModalCreate={(e) => setForm({name: e.currentTarget.value})}
-            nameLength={form.name.length}
-          />
-        }
+      <ModalCreatePortfolio
+        submitModalCreate={(e) => setForm({name: e.currentTarget.value})}
+        onCloseModal={() => setIsActiveModalCreatePortfolio(false)}
+        isActiveModal={isActiveModalCreatePortfolio}
       />
       <ModalBase 
         labelTitle='Register Coin'

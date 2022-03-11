@@ -30,6 +30,7 @@ export default function FormInputs({
   maxLength,
   registerProps,
   value,
+  margin,
   onKeyDown
 }: InputProps) {
   return(
@@ -38,6 +39,7 @@ export default function FormInputs({
       flexDirection='row'
       alignItems='center'
       justifyContent='center'
+      margin={margin}
     >
       {label &&
         <Label fontSize='micro'>{label}</Label>
