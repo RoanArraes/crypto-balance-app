@@ -6,6 +6,7 @@ interface Props{
 	color?: string;
 	textShadow?: boolean;
 	textUppercase?: boolean;
+	margin?: string;
 }
 export const PageText:React.FC <Props> = ({className, children}) => {
 	return (
