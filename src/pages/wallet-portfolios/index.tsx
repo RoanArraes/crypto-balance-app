@@ -217,17 +217,16 @@ const WalletPortfolios: React.FC = (props: Props) => {
       <FooterArea>
         <Footer label={LABELS.POWERED_BY} />
       </FooterArea>
-      <ModalCreatePortfolio
-        submitModalCreate={(e) => setForm({name: e.currentTarget.value})}
-        onCloseModal={() => setIsActiveModalCreatePortfolio(false)}
-        isActiveModal={isActiveModalCreatePortfolio}
-      />
+      {isActiveModalCreatePortfolio &&
+        <ModalCreatePortfolio
+          onCloseModal={() => setIsActiveModalCreatePortfolio(false)}
+        />
+      }
       {isActiveModalCreateCoin &&
         <ModalAddTransaction 
           onCloseModal={() => setIsActiveModalCreateCoin(false)}
         />
       }
-
     </Container>
   )
 };

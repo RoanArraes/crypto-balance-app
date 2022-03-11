@@ -32,14 +32,10 @@ interface InputProps {
 }
 
 interface Props {
-  submitModalCreate: (e: React.ChangeEvent<HTMLInputElement>) => void
-  isActiveModal: boolean,
   onCloseModal: () => void
 }
 
 export default function ModalCreatePortfolio({
-  submitModalCreate,
-  isActiveModal,
   onCloseModal
 }: Props) {
 
@@ -67,7 +63,6 @@ export default function ModalCreatePortfolio({
   return(
     <ModalBase 
     labelTitle="Create Portfolio"
-    //showModal={isActiveModal}
     onCloseModal={onCloseModal}
     children={
       <GroupForm
