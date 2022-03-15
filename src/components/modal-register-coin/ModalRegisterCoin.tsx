@@ -109,8 +109,6 @@ export default function ModalRegisterCoin({
               <Label fontSize='micro'>Type</Label>
               <SelectRounded 
                 options={OPTIONS_ADD_TRANSACTIONS}
-                width={'100%'}
-                maxWidth={'500px'}
                 onChange={(e)=> setForm({...form, type: e.currentTarget.value})}
               />
               {(form.type === 'buy' || form.type === 'sell') ?

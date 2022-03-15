@@ -9,7 +9,7 @@ interface Props {
 
 export const InputField = styled.input<Props>`
   width: 100%;
-  max-width: ${props => props.maxWidth ? props.maxWidth : '500px'};
+  max-width: ${props => props.maxWidth ? props.maxWidth : 'none'};
   height: 50px;
   border: 1px solid transparent;
   border-radius: 10px;

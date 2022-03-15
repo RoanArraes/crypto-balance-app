@@ -103,7 +103,7 @@ export default function FormTransferInOut({
           flexDirection='column'
           alignItems='flex-start'
           justifyContent='center'
-          maxWidth='500px'
+          maxWidth='250px'
           flexWrap="nowrap"
           margin='0px 10px 0px 0px'
         >
@@ -112,7 +112,6 @@ export default function FormTransferInOut({
             type='text' 
             name="date" 
             placeholder={'0' + new Date().toLocaleDateString()}
-            maxWidth="250px"
             autoComplete="off"
             maxLength="10"
             value={form.date}
@@ -127,7 +126,7 @@ export default function FormTransferInOut({
           flexDirection='column'
           alignItems='flex-start'
           justifyContent='center'
-          maxWidth='500px'
+          maxWidth='250px'
           flexWrap="nowrap"
         >
           <Label fontSize='micro'>Time ( 24 hrs )</Label>
@@ -135,7 +134,6 @@ export default function FormTransferInOut({
             type='text' 
             name="time" 
             placeholder='22:00'
-            maxWidth="250px"
             autoComplete="off"
             maxLength="5"
             value={form.time}
@@ -160,7 +158,6 @@ export default function FormTransferInOut({
           type='number' 
           name="quantity" 
           placeholder='0.1'
-          maxWidth="500px"
           autoComplete="off"
           value={Number(form.quantity)}
           register={register}
@@ -173,7 +170,6 @@ export default function FormTransferInOut({
           type='number' 
           name="fees" 
           placeholder='0.1'
-          maxWidth="500px"
           autoComplete="off"
           value={Number(form.fees)}
           register={register}

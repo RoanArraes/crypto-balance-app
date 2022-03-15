@@ -73,14 +73,12 @@ export default function ModalCreatePortfolio({
           flexDirection='column'
           alignItems='flex-start'
           justifyContent='center'
-          maxWidth='500px'
           flexWrap="wrap"
         >
           <Label fontSize='micro'>Portfolio Name</Label>
           <FormInputs 
             type='text'
             name="name"
-            maxWidth="500px"
             maxLength="32"
             autoComplete="off"
             margin="10px 0px"
@@ -100,7 +98,6 @@ export default function ModalCreatePortfolio({
             <ErrorMessagesArea
               flexDirection='column'
               alignItems='center'
-              maxWidth='500px'
               flexWrap="wrap"
               margin="10px 0px 0px 0px"
             >
@@ -114,7 +111,6 @@ export default function ModalCreatePortfolio({
         <ButtonRounded 
           type='submit' 
           label='create'
-          maxWidth='500px'
           marginTop='10px'
         />
       </GroupForm>

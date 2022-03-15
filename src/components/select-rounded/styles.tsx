@@ -8,8 +8,8 @@ interface Props {
 }
 
 export const Select = styled.select<Props>`
-  width: ${props => props.width ? props.width : "100px"};
-  max-width: ${props => props.maxWidth ? props.maxWidth : "100px"};
+  width: ${props => props.width ? props.width : "100%"};
+  max-width: ${props => props.maxWidth ? props.maxWidth : "none"};
   margin: ${props => props.margin ? props.margin : "0px"};
   background-color: ${props => props.theme.colors.input.background};
   color: ${props => props.theme.colors.white};

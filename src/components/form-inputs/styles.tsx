@@ -12,7 +12,7 @@ export const Wrapper = styled(PageItemWrapper)`
   display: ${props => props.display ? props.display : "flex"};
   flex-direction: ${props => props.flexDirection ? props.flexDirection : "row"};
   align-items: ${props => props.alignItems ? props.alignItems : "center"};
-  max-width: ${props => props.maxWidth ? props.maxWidth : "500px"};
+  max-width: ${props => props.maxWidth ? props.maxWidth : "none"};
   margin: ${props => props.margin ? props.margin : "0px"};
   justify-content: ${props => props.justifyContent ? props.justifyContent : "flex-start"};
   flex-wrap: ${props => props.flexWrap ? props.flexWrap : "none"};
@@ -21,7 +21,7 @@ export const Wrapper = styled(PageItemWrapper)`
 
 export const InputField = styled.input<Props>`
   width: 100%;
-  max-width: ${props => props.maxWidth ? props.maxWidth : '500px'};
+  max-width: ${props => props.maxWidth ? props.maxWidth : 'none'};
   height: 50px;
   border: 1px solid transparent;
   border-radius: 10px;
