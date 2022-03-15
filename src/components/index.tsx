@@ -17,6 +17,7 @@ import TableTransactions from "./table-transactions/TableTransactions";
 import ModalAddTransaction from "./modal-add-transaction/ModalAddTransaction"
 import FormInputs from "./form-inputs/FormInputs";
 import ModalCreatePortfolio from './modal-create-portfolio/ModalCreatePortfolio';
+import ModalRegisterCoin from "./modal-register-coin/ModalRegisterCoin";
 
 export {
   InputRounded,
@@ -37,5 +38,6 @@ export {
   TableTransactions,
   ModalAddTransaction,
   FormInputs,
-  ModalCreatePortfolio
+  ModalCreatePortfolio,
+  ModalRegisterCoin
 };

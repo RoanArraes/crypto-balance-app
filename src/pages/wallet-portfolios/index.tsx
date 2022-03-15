@@ -18,14 +18,15 @@ import {
   TableCoins,
   TableTransactions,
   ModalAddTransaction,
-  ModalCreatePortfolio
+  ModalCreatePortfolio,
+  ModalRegisterCoin
  } from '../../components';
 
 import { 
   LinksNavBarInterface,
   HoldingInfoInterface,
-  CreatePortfolioInterface,
-  TransactionsPortfolioInterface
+  TransactionsPortfolioInterface,
+  SelectedPortfolioAndCoinInterface
 } from '../../utils/interfaces';
 
 import {
@@ -47,17 +48,18 @@ const links: LinksNavBarInterface[] = [
 
 const portfolio = MockWalletHoldings;
 
-const WalletPortfolios: React.FC = (props: Props) => {
+export default function WalletPortfolios(props: Props){
 
-  const [selectedPortfolio, setSelectedPortfolio] = useState<HoldingInfoInterface | undefined | false >(false);
-  const [selectedTransaction, setSelectedTransaction] = useState<string | false>(false);
+  const [selectedPortfolio, setSelectedPortfolio] = useState<HoldingInfoInterface | undefined | null >(null);
+  const [selectedTransaction, setSelectedTransaction] = useState<TransactionsPortfolioInterface | null>(null);
   const [isActiveModalCreatePortfolio, setIsActiveModalCreatePortfolio] = useState<boolean>(false);
   const [isActiveModalCreateCoin, setIsActiveModalCreateCoin] = useState<boolean>(false);
-  const [form, setForm] = useState<CreatePortfolioInterface>({name: ""});
+  const [isActiveModalRegisterCoin, setIsActiveModalRegisterCoin] = useState<boolean>(false);
+  
 
   useEffect(() => {
     if(selectedPortfolio) {
-      setSelectedTransaction(false);
+      setSelectedTransaction(null);
     }
   }, [selectedPortfolio]);
 
@@ -121,7 +123,7 @@ const WalletPortfolios: React.FC = (props: Props) => {
               <GroupBoxArea.GroupTableHoldings>
                 <TableCoins
                   transactions={selectedPortfolio.transactions}
-                  onClickTransaction={(id) => setSelectedTransaction(id)}
+                  onClickTransaction={(id) => findTransaction(id)}
                 />
               </GroupBoxArea.GroupTableHoldings>
               :
@@ -135,7 +137,7 @@ const WalletPortfolios: React.FC = (props: Props) => {
                   type='button'
                   label='Register coin'
                   maxWidth='400px'
-                  onClick={() => setIsActiveModalCreateCoin(true)}
+                  onClick={() => setIsActiveModalRegisterCoin(true)}
                 />
               </Wrapper>
             }
@@ -154,16 +156,17 @@ const WalletPortfolios: React.FC = (props: Props) => {
                   label='back'
                   maxWidth='100px'
                   colorButton='buttonBack'
-                  onClick={() => setSelectedTransaction(false)}
+                  onClick={() => setSelectedTransaction(null)}
                 />
                 <ButtonRounded 
                   type='button'
                   label='add transaction'
                   maxWidth='200px'
+                  onClick={() => setIsActiveModalCreateCoin(true)}
                 />
               </Wrapper>
               <TableTransactions
-                transaction={findTransaction(selectedTransaction)}
+                transaction={selectedTransaction}
               />
             </GroupBoxArea.GroupTableHoldings>
           : (!selectedPortfolio && !selectedTransaction) &&
@@ -176,26 +179,34 @@ const WalletPortfolios: React.FC = (props: Props) => {
     )
   }
 
-  const findSelectedPortfolio = (id: string) => {
-    if (!id || id === "") {
-      return null
-    }
-
+  function findSelectedPortfolio(id: string): void {
     const item = portfolio.find(p => p.id === id);
-
     setSelectedPortfolio(item);
   }
 
-  function findTransaction(id: string): TransactionsPortfolioInterface | null {
+  function findTransaction(id: string): void {
     let item = null;
-    
-    selectedPortfolio && selectedPortfolio['transactions'].map(t => {
+    const portfolio = selectedPortfolio;
+
+    portfolio && portfolio['transactions'].map(t => {
       if(t.id === id) {
         item = t;
       }
       return null
     });
-    return item;
+
+    setSelectedTransaction(item);
+  }
+
+  function chargeTransactionPortfolio() {
+    const result: SelectedPortfolioAndCoinInterface = {
+      idPortfolio: selectedPortfolio ? selectedPortfolio.id : "",
+      idCoin: selectedTransaction ? selectedTransaction.id : "",
+      nameCoin: selectedTransaction ? selectedTransaction.name : "",
+      projectInitials: selectedTransaction ? selectedTransaction.projectInitials : ""
+    }
+    
+    return result
   }
 
   return(
@@ -222,13 +233,20 @@ const WalletPortfolios: React.FC = (props: Props) => {
           onCloseModal={() => setIsActiveModalCreatePortfolio(false)}
         />
       }
+      {isActiveModalRegisterCoin &&
+        <ModalRegisterCoin
+          labelTitle={"Register Coin"}
+          coinAndPortfolio={chargeTransactionPortfolio()}
+          onCloseModal={() => setIsActiveModalRegisterCoin(false)}
+        />
+      }
       {isActiveModalCreateCoin &&
-        <ModalAddTransaction 
+        <ModalAddTransaction
+          labelTitle={"Add Transaction"}
+          coinAndPortfolio={chargeTransactionPortfolio()}
           onCloseModal={() => setIsActiveModalCreateCoin(false)}
         />
       }
     </Container>
   )
 };
-
-export default WalletPortfolios;

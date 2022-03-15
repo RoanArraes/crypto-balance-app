@@ -31,9 +31,9 @@ export interface TransactionsPortfolioInterface {
   totalValue: string,
   idealHold: string,
   profit24hrs: string,
-  action: string
+  action: string,
+  projectInitials: string
 }
-
 
 export interface HoldingInfoInterface {
   id: string,

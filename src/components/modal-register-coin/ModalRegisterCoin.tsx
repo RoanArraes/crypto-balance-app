@@ -7,9 +7,10 @@ import {
 } from './styles';
 
 import {
+  ListWithSearch,
   SelectRounded,
   ModalBase
-} from '../';
+} from '..';
 
 import { OPTIONS_ADD_TRANSACTIONS } from '../../utils/constants/select-options';
 import { 
@@ -47,7 +48,7 @@ type ModalProps = {
   labelTitle?: string
 }
 
-export default function ModalAddTransaction({ 
+export default function ModalRegisterCoin({ 
   coinAndPortfolio,
   onCloseModal,
   labelTitle
@@ -80,30 +81,49 @@ export default function ModalAddTransaction({
       onCloseModal={onCloseModal}
       children={
         <Container>
-          <Wrapper
-            flexDirection='column'
-            alignItems='flex-start'
-            maxWidth='500px'
-            flexWrap="wrap"
-          >
-            <Label fontSize='medium1'>{selectedCoin.nameCoin} - {selectedCoin.projectInitials}</Label>
-            <Label fontSize='micro'>Type</Label>
-            <SelectRounded 
-              options={OPTIONS_ADD_TRANSACTIONS}
-              width={'100%'}
-              maxWidth={'500px'}
-              onChange={(e)=> setForm({...form, type: e.currentTarget.value})}
-            />
-            {(form.type === 'buy' || form.type === 'sell') ?
-                <FormBuyAndSell 
-                  onSubmitForm={(formBuyAndSell) => submitForm(formBuyAndSell)}
-                />
-              :
-                <FormTransferInOut 
-                  onSubmitForm={(formTransferInOut) => submitForm(formTransferInOut)}
-                />
-            }
-          </Wrapper>
+          {(selectedCoin && selectedCoin.idCoin === "") ?
+            <Wrapper
+              flexDirection='column'
+              alignItems='flex-start'
+              maxWidth='500px'
+              flexWrap="wrap"
+            >
+              <Label
+                fontSize='micro'
+              >
+                Search coin
+              </Label>
+              <ListWithSearch
+                maxHeight="400px"
+                onClickItem={(coin) => setSelectedCoin({...selectedCoin, ...coin})}
+              />
+            </Wrapper>
+          : (selectedCoin && selectedCoin.idCoin !== "") &&
+            <Wrapper
+              flexDirection='column'
+              alignItems='flex-start'
+              maxWidth='500px'
+              flexWrap="wrap"
+            >
+              <Label fontSize='medium1'>{selectedCoin.nameCoin} - {selectedCoin.projectInitials}</Label>
+              <Label fontSize='micro'>Type</Label>
+              <SelectRounded 
+                options={OPTIONS_ADD_TRANSACTIONS}
+                width={'100%'}
+                maxWidth={'500px'}
+                onChange={(e)=> setForm({...form, type: e.currentTarget.value})}
+              />
+              {(form.type === 'buy' || form.type === 'sell') ?
+                  <FormBuyAndSell 
+                    onSubmitForm={(formBuyAndSell) => submitForm(formBuyAndSell)}
+                  />
+                :
+                  <FormTransferInOut 
+                    onSubmitForm={(formTransferInOut) => submitForm(formTransferInOut)}
+                  />
+              }
+            </Wrapper>
+          }
         </Container>
       }
     />

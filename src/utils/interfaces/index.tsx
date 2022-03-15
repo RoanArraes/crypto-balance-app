@@ -1,4 +1,5 @@
 import { LinksNavBarInterface } from './LinksNavBar.interface';
+import { SelectedPortfolioAndCoinInterface } from './SelectedPortfolioAndCoin.interface'
 import { ListCoinsInterface, HoldingInfoInterface, TransactionsPortfolioInterface } from './HoldingInfo.interface';
 import { 
   CreatePortfolioInterface, 
@@ -15,5 +16,6 @@ export type {
   ListCoinsInterface,
   RegisterTransactionInterface,
   RegisterTransactionBuyAndSellInterface,
-  RegisterTransactionInOutInterface
+  RegisterTransactionInOutInterface,
+  SelectedPortfolioAndCoinInterface
 }

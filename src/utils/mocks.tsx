@@ -1,29 +1,29 @@
-import {ListCoinsInterface, HoldingInfoInterface} from '../utils/interfaces'
+import {SelectedPortfolioAndCoinInterface, HoldingInfoInterface} from '../utils/interfaces'
 
-const MockListCoins: ListCoinsInterface[] = [
+const MockListCoins: SelectedPortfolioAndCoinInterface[] = [
   {
-    id: "12",
-    name: "BNB",
+    idCoin: "12",
+    nameCoin: "BNB",
     projectInitials: "BNB"
   },
   {
-    id: "13",
-    name: "Ethereum",
+    idCoin: "13",
+    nameCoin: "Ethereum",
     projectInitials: "ETH"
   },
   {
-    id: "14",
-    name: "Gala",
+    idCoin: "14",
+    nameCoin: "Gala",
     projectInitials: "GALA"
   },
   {
-    id: "15",
-    name: "Axie Infinity",
+    idCoin: "15",
+    nameCoin: "Axie Infinity",
     projectInitials: "AXS"
   },
   {
-    id: "16",
-    name: "Bitgert",
+    idCoin: "16",
+    nameCoin: "Bitgert",
     projectInitials: "BRISE"
   }
 ]
@@ -51,6 +51,7 @@ const MockWalletHoldings: HoldingInfoInterface[] = [
       {
         id: "1rd",
         name: "BNB",
+        projectInitials: "BNB",
         idealHold: "100",
         profit24hrs: "10",
         action: "Rebalance",
@@ -95,7 +96,8 @@ const MockWalletHoldings: HoldingInfoInterface[] = [
       },
       {
         id: "2bdbv",
-        name: "ETH",
+        name: "Ethereum",
+        projectInitials: "ETH",
         idealHold: "100",
         profit24hrs: "10",
         action: "Rebalance",
@@ -140,7 +142,8 @@ const MockWalletHoldings: HoldingInfoInterface[] = [
       },
       {
         id: "3fdbdbf",
-        name: "GALA",
+        name: "Gala",
+        projectInitials: "GALA",
         idealHold: "100",
         profit24hrs: "10",
         action: "Rebalance",
@@ -185,7 +188,8 @@ const MockWalletHoldings: HoldingInfoInterface[] = [
       },
       {
         id: "4bfddfg",
-        name: "ADA",
+        name: "Cardano",
+        projectInitials: "BNB",
         idealHold: "100",
         profit24hrs: "10",
         action: "Rebalance",
@@ -230,7 +234,8 @@ const MockWalletHoldings: HoldingInfoInterface[] = [
       },
       {
         id: "5rgwegg",
-        name: "AXS",
+        name: "Axios Infinite",
+        projectInitials: "AXS",
         idealHold: "100",
         profit24hrs: "10",
         action: "Rebalance",
@@ -287,6 +292,7 @@ const MockWalletHoldings: HoldingInfoInterface[] = [
       {
         id: "1sssfgs",
         name: "BNB",
+        projectInitials: "BNB",
         idealHold: "100",
         profit24hrs: "10",
         action: "Rebalance",
@@ -343,6 +349,7 @@ const MockWalletHoldings: HoldingInfoInterface[] = [
       {
         id: "1casfdgs",
         name: "BNB",
+        projectInitials: "BNB",
         idealHold: "100",
         profit24hrs: "10",
         action: "Rebalance",
@@ -399,6 +406,7 @@ const MockWalletHoldings: HoldingInfoInterface[] = [
       {
         id: "1cvhgd",
         name: "BNB",
+        projectInitials: "BNB",
         idealHold: "100",
         profit24hrs: "10",
         action: "Rebalance",
@@ -443,7 +451,8 @@ const MockWalletHoldings: HoldingInfoInterface[] = [
       },
       {
         id: "2fajgfj",
-        name: "ETH",
+        name: "Ethereum",
+        projectInitials: "ETH",
         idealHold: "100",
         profit24hrs: "10",
         action: "Rebalance",
@@ -488,7 +497,8 @@ const MockWalletHoldings: HoldingInfoInterface[] = [
       },
       {
         id: "3dfgdf",
-        name: "GALA",
+        name: "Gala",
+        projectInitials: "GALA",
         idealHold: "100",
         profit24hrs: "10",
         action: "Rebalance",
@@ -533,7 +543,8 @@ const MockWalletHoldings: HoldingInfoInterface[] = [
       },
       {
         id: "4gfjfgj",
-        name: "ADA",
+        name: "Cardano",
+        projectInitials: "ADA",
         idealHold: "100",
         profit24hrs: "10",
         action: "Rebalance",
@@ -578,7 +589,8 @@ const MockWalletHoldings: HoldingInfoInterface[] = [
       },
       {
         id: "5etyety",
-        name: "AXS",
+        name: "Axios Infinite",
+        projectInitials: "AXS",
         idealHold: "100",
         profit24hrs: "10",
         action: "Rebalance",
@@ -624,6 +636,7 @@ const MockWalletHoldings: HoldingInfoInterface[] = [
       {
         id: "1etyjgdjgd",
         name: "BNB",
+        projectInitials: "BNB",
         idealHold: "100",
         profit24hrs: "10",
         action: "Rebalance",
@@ -668,7 +681,8 @@ const MockWalletHoldings: HoldingInfoInterface[] = [
       },
       {
         id: "2jtjdhjgj",
-        name: "ETH",
+        name: "Ethereum",
+        projectInitials: "ETH",
         idealHold: "100",
         profit24hrs: "10",
         action: "Rebalance",
@@ -713,7 +727,8 @@ const MockWalletHoldings: HoldingInfoInterface[] = [
       },
       {
         id: "3tjjtgdj",
-        name: "GALA",
+        name: "Gala",
+        projectInitials: "GALA",
         idealHold: "100",
         profit24hrs: "10",
         action: "Rebalance",
@@ -758,7 +773,8 @@ const MockWalletHoldings: HoldingInfoInterface[] = [
       },
       {
         id: "4ertret",
-        name: "ADA",
+        name: "Cardano",
+        projectInitials: "ADA",
         idealHold: "100",
         profit24hrs: "10",
         action: "Rebalance",
@@ -803,7 +819,8 @@ const MockWalletHoldings: HoldingInfoInterface[] = [
       },
       {
         id: "5teyeyewr",
-        name: "AXS",
+        name: "Axios Infinite",
+        projectInitials: "AXS",
         idealHold: "100",
         profit24hrs: "10",
         action: "Rebalance",

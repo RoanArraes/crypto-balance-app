@@ -23,6 +23,7 @@ export interface RegisterTransactionInOutInterface {
 
 export interface RegisterTransactionInterface 
   extends RegisterTransactionBuyAndSellInterface, RegisterTransactionInOutInterface {
+  idPortfolio?: string;
   idUser?: string;
   idCoin?: string;
   type?: string;

@@ -8,13 +8,13 @@ import {
 } from '../../components';
 
 import { MockListCoins } from '../../utils/mocks';
-import { ListCoinsInterface } from '../../utils/interfaces';
+import { SelectedPortfolioAndCoinInterface } from '../../utils/interfaces';
 
 const listMock = MockListCoins;
 
 interface Props {
   maxHeight?: string;
-  onClickItem: (item: ListCoinsInterface) => void
+  onClickItem: (item: SelectedPortfolioAndCoinInterface) => void
 }
 
 export default function ListWithSearch({ 
@@ -38,14 +38,14 @@ export default function ListWithSearch({
             listMock.map(item => {
               return(
                 <ListItems.Item 
-                  key={item.id}
+                  key={item.idCoin}
                   onClick={() => onClickItem(item)}
                 >
                   <ListItems.ImageItem />
                   <ListItems.Label 
                     className='label-list-search'
                   >
-                      {item.name} - {item.projectInitials}
+                      {item.nameCoin} - {item.projectInitials}
                   </ListItems.Label>
                 </ListItems.Item>
               )
