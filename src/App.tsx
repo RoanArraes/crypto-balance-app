@@ -8,7 +8,6 @@ import {
 } from 'react-router-dom';
 
 import {
-  Login,
   WalletPortfolios,
   WalletBalance
 } from "./pages";
@@ -21,7 +20,6 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path={ROUTES.HOME.url} element={<WalletPortfolios />} />
-            <Route path={ROUTES.LOGIN.url} element={<Login />} />
             <Route path={ROUTES.BALANCE.url} element={<WalletBalance />} />
           </Routes>
         </BrowserRouter>
