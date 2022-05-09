@@ -20,7 +20,7 @@ const theme = {
       white:"#FFFFFF"
     },
     body: {
-      background: "#1a1b22"
+      background: "#17171a"
     },
     footer: {
       background: "rgba(0,0,0,0.5)",

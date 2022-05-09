@@ -18,6 +18,7 @@ import ModalAddTransaction from "./modal-add-transaction/ModalAddTransaction"
 import FormInputs from "./form-inputs/FormInputs";
 import ModalCreatePortfolio from './modal-create-portfolio/ModalCreatePortfolio';
 import ModalRegisterCoin from "./modal-register-coin/ModalRegisterCoin";
+import DropDownRounded from "./dropdown-rounded/DropDownRounded";
 
 export {
   InputRounded,
@@ -39,5 +40,6 @@ export {
   ModalAddTransaction,
   FormInputs,
   ModalCreatePortfolio,
-  ModalRegisterCoin
+  ModalRegisterCoin,
+  DropDownRounded
 };

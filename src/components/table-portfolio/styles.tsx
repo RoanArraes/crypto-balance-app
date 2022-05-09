@@ -44,6 +44,7 @@ export const TableArea = styled.table`
     padding: 20px 10px;
     overflow: hidden;
     text-overflow: ellipsis;
+    z-index: 998;
     cursor: default;
 
     &:last-child {
@@ -59,4 +60,15 @@ export const Label = styled(PageText)`
   text-shadow: ${props => props.textShadow ? props.theme.shadows.lightWhite0 : "none"};
   text-transform: ${props => props.textUppercase ? "uppercase" : "none"};
   margin-bottom: 20px;
+`;
+
+export const WrapperItens = styled(PageItemWrapper)`
+  width: 100%;
+  display: ${props => props.display ? props.display : "flex"};
+  flex-direction: ${props => props.flexDirection ? props.flexDirection : "row"};
+  align-items: ${props => props.alignItems ? props.alignItems : "center"};
+  max-width: ${props => props.maxWidth ? props.maxWidth : "500px"};
+  margin: ${props => props.margin ? props.margin : "0px"};
+  justify-content: ${props => props.justifyContent ? props.justifyContent : "flex-start"};
+  flex-wrap: ${props => props.flexWrap ? props.flexWrap : "none"};
 `;

@@ -38,7 +38,6 @@ export default function TableCoins({
             <th>Value</th>
             <th>Ideal Value</th>
             <th>Action</th>
-            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -51,7 +50,6 @@ export default function TableCoins({
                   <td onClick={() => onClickTransaction(t.id)}>${t.totalValue}</td>
                   <td onClick={() => onClickTransaction(t.id)}>${t.idealHold}</td>
                   <td onClick={() => onClickTransaction(t.id)}>{t.action}</td>
-                  <td>:</td>
                 </tr>
             )
           })}
